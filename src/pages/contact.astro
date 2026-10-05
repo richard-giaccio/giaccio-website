@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../../data/site.json';
+const showPhone = site.contact.phone && !site.contact.phone.startsWith('[');
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address || '')}`;
+---
+<BaseLayout title="Contact" description="Get in touch with the Giaccio family.">
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Talk to the family</h2>
+        <p>{site.contact.intro}</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:960px;margin:0 auto;align-items:start;">
+        <form class="form" action="https://formspree.io/f/FORM_ID" method="POST">
+          <div class="field-row">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" type="email" placeholder="Email address" required />
+          </div>
+          <div class="field-row">
+            <input name="phone" placeholder="Phone (optional)" />
+            <input name="property" id="propertyField" placeholder="Home you're interested in (optional)" />
+          </div>
+          <textarea name="message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+
+        <div>
+          <h3>Reach us directly</h3>
+          <p style="margin-top:14px;">Email<br /><a href={`mailto:${site.contact.email}`} style="color:var(--gold-soft);font-weight:600;">{site.contact.email}</a></p>
+          {showPhone && <p>Phone<br /><a href={`tel:${site.contact.phone}`} style="color:var(--gold-soft);font-weight:600;">{site.contact.phone}</a></p>}
+          {site.contact.address && <p>Visit<br /><a href={mapsUrl} target="_blank" rel="noopener" style="color:var(--gold-soft);font-weight:600;">{site.contact.address}</a></p>}
+          <p>Area Served<br />{site.contact.area}</p>
+          <p style="margin-top:20px;color:var(--muted);font-size:.92rem;">Every message is read personally by our family. We'll get back to you soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {site.contact.address && (
+    <section class="section">
+      <div class="wrap">
+        <div class="map-head">
+          <p class="eyebrow">Find Us</p>
+          <a class="map-address" href={mapsUrl} target="_blank" rel="noopener" style="display:inline-block;">{site.contact.address}</a>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            title="Giaccio Properties location map"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(site.contact.address)}&output=embed`}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  )}
+  <script>
+    const params = new URLSearchParams(location.search);
+    const prop = params.get('property');
+    if (prop) { const f = document.getElementById('propertyField'); if (f) f.value = prop; }
+  </script>
+</BaseLayout>

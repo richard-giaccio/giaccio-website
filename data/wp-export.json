@@ -1,0 +1,65 @@
+{
+  "_note": "The ONLY 5 properties that exist in the Giaccio WordPress database (all published, no drafts). Extracted 2026-09-29 from richsite941639859.wpcomstaging.com via WP-CLI. The other 74 photo folders have NO structured data anywhere. Prices of 'rented' indicate this is a realtor's past rental/sales portfolio, not active MLS listings.",
+  "properties": [
+    {
+      "wp_id": 295,
+      "title": "The Meadows - Winterberry: 2bdrom, 1.5 bath",
+      "price": "rented",
+      "size_sqft": "2100",
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "floor": 3,
+      "heating": "Heat Pump Air",
+      "town": "Winterberry (The Meadows)",
+      "featured_image": "https://richsite941639859.wpcomstaging.com/wp-content/uploads/2019/01/IMG_7876.jpeg",
+      "gallery_attachment_ids": [297, 298, 299, 300]
+    },
+    {
+      "wp_id": 276,
+      "title": "The Meadows - Briar Court: 2 bdrm, 1.5 bath",
+      "price": "rented",
+      "size_sqft": "2100",
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "floor": 3,
+      "heating": "Heat Pump Air",
+      "parking": "Assigned",
+      "gallery_attachment_ids": [277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294]
+    },
+    {
+      "wp_id": 213,
+      "title": "Cedar Woods - 1brdm, 1 bath",
+      "simple_address": "Goldens Bridge NY",
+      "zip": "10526",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "gallery_attachment_ids": [273,274,275]
+    },
+    {
+      "wp_id": 163,
+      "title": "The Meadows - Briar Court: 2 bdrm, 2bth",
+      "price": "rented",
+      "size_sqft": "2200",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "floor": 3,
+      "heating": "Heat Pump Air",
+      "parking": "Garage",
+      "garages": 1,
+      "gallery_attachment_ids": [166,176,175,170,194,191,181,173,188,197,174,199]
+    },
+    {
+      "wp_id": 40,
+      "title": "3 Oakridge Drive",
+      "full_address": "3 Oakridge Drive, South Salem, NY 10590",
+      "zip": "10590",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "year_built": 1983,
+      "heating": "Heat Pump Air",
+      "parking": "Assigned",
+      "size_sqft": "1312",
+      "gallery_attachment_ids": [50,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413]
+    }
+  ]
+}

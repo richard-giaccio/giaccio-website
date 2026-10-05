@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+
+# Redundant top-level compressor output. Canonical copy lives in public/assets/
+# (see README.md). Kept on disk as a safety net, not committed.
+/assets/

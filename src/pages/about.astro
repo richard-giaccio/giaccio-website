@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getProperties, getTowns } from '../lib/properties.js';
+import site from '../../data/site.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = getProperties();
+const towns = getTowns();
+---
+<BaseLayout title="Our Story" description="The story behind Giaccio Properties, a family of homes in Westchester County.">
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Our Story</p>
+      <h1>{site.about.title}</h1>
+      {site.about.body.map((para, i) => (
+        <p style={i === 0 ? 'font-size:1.15rem;' : ''}>{para}</p>
+      ))}
+
+      {site.about.founder_note && (
+        <div style="border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;color:var(--ink-soft);font-style:italic;">
+          {site.about.founder_note}
+        </div>
+      )}
+
+      <div class="signature">{site.about.signature}</div>
+
+      <div class="stats" style="margin-top:50px;">
+        <div class="stat"><div class="num">{all.length}</div><div class="lbl">Homes Built</div></div>
+        <div class="stat"><div class="num">{towns.length}</div><div class="lbl">Communities</div></div>
+        <div class="stat"><div class="num">1</div><div class="lbl">Family</div></div>
+      </div>
+
+      <div style="margin-top:44px;"><a href={`${base}/contact`} class="btn">Get in Touch</a></div>
+    </div>
+  </section>
+</BaseLayout>

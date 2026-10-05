@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+import { getProperties, getTowns, statusLabel, asset } from '../lib/properties.js';
+import site from '../../data/site.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = getProperties();
+const orderMap = { active: 0, 'for-rent': 1, rented: 2, sold: 3 };
+const props = [...all].sort(
+  (a, b) => (b.hasPhotos - a.hasPhotos) || ((orderMap[a.status] ?? 9) - (orderMap[b.status] ?? 9))
+);
+const towns = getTowns();
+const photographed = all.filter((p) => p.hasPhotos);
+const hero = photographed[0]?.featured;
+const storyImg = site.story.image ? { jpg: asset(site.story.image) } : photographed[1]?.featured;
+const ctaImg = photographed[5]?.featured || photographed[2]?.featured;
+const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some((p) => p.status === s));
+---
+<BaseLayout>
+  <section class="hero">
+    {hero && <img class="hero-bg" src={hero.jpg} alt="" />}
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold-soft)">{site.hero.eyebrow}</p>
+      <h1>{site.hero.title}</h1>
+      <div class="gold-rule center"></div>
+      <p class="sub">{site.hero.subtitle}</p>
+      <a href="#listings" class="btn">{site.hero.cta}</a>
+    </div>
+    <div class="scroll-cue">Scroll</div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section">
+    <div class="wrap">
+      <div class="story">
+        <div class="story-img" data-reveal>
+          {storyImg && <img src={storyImg.jpg} alt={site.story.image_alt || 'A Giaccio family home'} />}
+        </div>
+        <div data-reveal data-delay="1">
+          <p class="eyebrow">{site.story.eyebrow}</p>
+          <h2>{site.story.title}</h2>
+          <div class="gold-rule"></div>
+          {site.story.founder_line && <p class="founder-line">{site.story.founder_line}</p>}
+          {site.story.body.map((para) => <p>{para}</p>)}
+          <div class="signature">{site.story.signature}</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat" data-reveal><div class="num">{all.length}</div><div class="lbl">Homes Built</div></div>
+        <div class="stat" data-reveal data-delay="1"><div class="num">{towns.length}</div><div class="lbl">Communities</div></div>
+        <div class="stat" data-reveal data-delay="2"><div class="num">1</div><div class="lbl">Family Behind Them</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Collection -->
+  <section class="section alt" id="listings">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">{site.collection.eyebrow}</p>
+        <h2>{site.collection.title}</h2>
+        <div class="gold-rule center"></div>
+        <p>{site.collection.intro}</p>
+      </div>
+
+      {statuses.length > 0 && (
+        <div class="legend" data-reveal>
+          {statuses.includes('active') && <span><i class="dot active"></i> For Sale</span>}
+          {statuses.includes('for-rent') && <span><i class="dot active"></i> For Rent</span>}
+          {statuses.includes('rented') && <span><i class="dot rented"></i> Rented</span>}
+          {statuses.includes('sold') && <span><i class="dot sold"></i> Sold</span>}
+        </div>
+      )}
+
+      <div class="filterbar" data-reveal>
+        <div class="fgroup">
+          <span class="flabel">Beds</span>
+          <div class="pills" id="fBeds">
+            <button class="pill active" data-beds="0">All</button>
+            <button class="pill" data-beds="1">1+</button>
+            <button class="pill" data-beds="2">2+</button>
+            <button class="pill" data-beds="3">3+</button>
+            <button class="pill" data-beds="4">4+</button>
+          </div>
+        </div>
+
+        {statuses.length > 0 && (
+          <div class="fgroup">
+            <span class="flabel">Status</span>
+            <div class="pills" id="fStatus">
+              <button class="pill active" data-status="">All</button>
+              {statuses.map((s) => <button class="pill" data-status={s}>{statusLabel(s)}</button>)}
+            </div>
+          </div>
+        )}
+
+        <div class="select-wrap">
+          <select class="msel" id="fTown"><option value="">All Towns</option>{towns.map((t) => <option value={t}>{t}</option>)}</select>
+        </div>
+
+        <input class="msearch" id="fSearch" type="search" placeholder="Search address or town" />
+        <span class="result-count" id="count"></span>
+      </div>
+
+      <div class="grid" id="grid">
+        {props.map((p, i) => <div data-reveal data-delay={String(i % 3)}><PropertyCard p={p} /></div>)}
+      </div>
+      <p id="noResults" style="display:none;text-align:center;color:var(--muted);padding:40px;">No homes match those filters.</p>
+    </div>
+  </section>
+
+  <!-- Come Visit -->
+  <section class="cta-band">
+    {ctaImg && <img class="cta-bg" src={ctaImg.jpg} alt="" />}
+    <div class="wrap" data-reveal>
+      <p class="eyebrow" style="color:var(--gold-soft)">{site.visit.eyebrow}</p>
+      <h2>{site.visit.title}</h2>
+      <div class="gold-rule center"></div>
+      <p>{site.visit.body}</p>
+      <a href={`${base}/contact`} class="btn">{site.visit.cta}</a>
+    </div>
+  </section>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const cards = [...grid.querySelectorAll('.card')];
+    const wraps = cards.map((c) => c.closest('[data-reveal]') || c);
+    const fTown = document.getElementById('fTown');
+    const fBedsGroup = document.getElementById('fBeds');
+    const fStatusGroup = document.getElementById('fStatus');
+    const fSearch = document.getElementById('fSearch');
+    const noRes = document.getElementById('noResults');
+    const countEl = document.getElementById('count');
+    const total = cards.length;
+    let beds = 0, status = '';
+
+    function pillGroup(group, cb) {
+      if (!group) return;
+      group.querySelectorAll('.pill').forEach((btn) => btn.addEventListener('click', () => {
+        group.querySelectorAll('.pill').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        cb(btn);
+      }));
+    }
+    pillGroup(fBedsGroup, (b) => { beds = Number(b.dataset.beds || 0); apply(); });
+    pillGroup(fStatusGroup, (b) => { status = b.dataset.status || ''; apply(); });
+
+    function apply() {
+      const town = fTown.value, q = fSearch.value.toLowerCase().trim();
+      let shown = 0;
+      cards.forEach((c, i) => {
+        const okTown = !town || c.dataset.town === town;
+        const okStatus = !status || c.dataset.status === status;
+        const okBeds = !beds || (c.dataset.beds && Number(c.dataset.beds) >= beds);
+        const okQ = !q || c.textContent.toLowerCase().includes(q);
+        const show = okTown && okStatus && okBeds && okQ;
+        wraps[i].style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      noRes.style.display = shown ? 'none' : 'block';
+      countEl.textContent = shown === total ? `${total} homes` : `${shown} of ${total}`;
+    }
+    fTown.addEventListener('change', apply);
+    fSearch.addEventListener('input', apply);
+    apply();
+  </script>
+</BaseLayout>

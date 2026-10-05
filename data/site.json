@@ -1,0 +1,58 @@
+{
+  "_editing_notes": "All the words on the site live here so you can change them without touching code. Anything in [SQUARE BRACKETS] is a placeholder for you (Rich) to fill in, like your father's name, a founding year, or a phone number. Leave a value as an empty string \"\" to hide that piece.",
+
+  "brand": "Giaccio Properties",
+
+  "hero": {
+    "eyebrow": "A Family of Homes · Westchester County, New York",
+    "title": "The homes our family built",
+    "subtitle": "Every property here was built by our family, across Westchester County. Some have been sold, some are lovingly rented, and a few are still waiting for the right family. This is their story, and ours.",
+    "cta": "Explore the Collection"
+  },
+
+  "story": {
+    "eyebrow": "Our Story",
+    "title": "Built by hand, kept in the family",
+    "founder_line": "Founded by John Giaccio",
+    "image": "assets/properties/henker-farm-lane-1-armonk/01.jpg",
+    "image_alt": "Inside a home built by the Giaccio family",
+    "body": [
+      "Giaccio Properties began with John Giaccio and one belief: a home should be built to last, and built to be lived in. Every property in this collection was raised by our family, right here in Westchester County, with the same care we would give our own.",
+      "Over the years many of these homes have found their families and moved on. Others are rented and full of life today. And a few are still here, waiting for the right people to walk through the door.",
+      "Together they are more than listings. They are a family's life's work, and we are proud to share them with you."
+    ],
+    "signature": "— The Giaccio Family"
+  },
+
+  "collection": {
+    "eyebrow": "The Collection",
+    "title": "A Family of Properties",
+    "intro": "Some sold, some rented, some still available. Every one built by our family across Westchester County."
+  },
+
+  "visit": {
+    "eyebrow": "Come Visit",
+    "title": "See them for yourself",
+    "body": "Want to walk through one of our homes, or learn the story behind it? Reach out any time. We would love to show you around.",
+    "cta": "Get in Touch"
+  },
+
+  "about": {
+    "title": "A legacy you can walk through",
+    "body": [
+      "Giaccio Properties is a family portfolio of homes built across Westchester County, New York, from Bedford and Pound Ridge to South Salem, Katonah, and beyond.",
+      "What started as one family building homes with their own hands has grown into a collection of properties, some sold to the families who now love them, some rented and lived in today, and some still available for the right owner.",
+      "We know every one of these homes because we built them. When you reach out, you are talking to the family behind them, not a call center. Whether you want to buy, rent, or simply hear the story of a house, we are here."
+    ],
+    "founder_note": "Every home in this collection was built by John Giaccio. [Optional: add a few lines about how he began and what building meant to him, and we'll feature it here.]",
+    "signature": "— The Giaccio Family"
+  },
+
+  "contact": {
+    "email": "info@giaccioproperties.com",
+    "phone": "[Your phone number]",
+    "area": "Westchester County, New York",
+    "address": "143 Bedford Rd, Katonah, NY 10536",
+    "intro": "Tell us what you're looking for, or ask about any home in the collection. We read every message personally."
+  }
+}
