@@ -1,4 +1,4 @@
-# Giaccio Properties — Static Website
+# Giaccio Properties — Static Website 
 
 Westchester County real estate site. Astro static site, deploys free to GitHub Pages.
 Replaces the broken WordPress site (Eiddo theme + 2018 plugins).
