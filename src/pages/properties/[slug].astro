@@ -26,7 +26,7 @@ const rows = Math.max(thumbs.length, 1);
 ---
 <BaseLayout title={p.displayAddress} description={`${p.displayAddress}, ${p.location}`}>
   {p.hasPhotos ? (
-    <div class="detail-hero" style={`grid-template-rows: repeat(${rows}, 1fr);`}>
+    <div class={`detail-hero${thumbs.length === 0 ? ' nothumbs' : ''}`} style={`grid-template-rows: repeat(${rows}, 1fr);`}>
       <div class="main" style={`grid-row: 1 / ${rows + 1};`}><img src={hero.jpg} data-full={hero.jpg} alt={p.displayAddress} class="lb" /></div>
       {thumbs.map((t) => <div class="thumb"><img src={t.thumb} data-full={t.jpg} alt="" class="lb" /></div>)}
     </div>

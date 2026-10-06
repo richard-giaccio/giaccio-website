@@ -138,8 +138,9 @@ p { margin: 0 0 1.1rem; }
 .card:hover .card-arrow { opacity: 1; transform: none; }
 
 /* detail */
-.detail-hero { display: grid; grid-template-columns: 2fr 1fr; gap: 8px; height: 74vh; min-height: 460px; padding-top: 0; }
-.detail-hero .main { grid-row: 1 / 3; }
+.detail-hero { display: grid; grid-template-columns: 2fr 1fr; gap: 8px; height: 74vh; min-height: 460px; padding-top: 0; overflow: hidden; }
+.detail-hero.nothumbs { grid-template-columns: 1fr; }
+.detail-hero .main { grid-row: 1 / 3; min-width: 0; min-height: 0; }
 .detail-hero img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; filter: brightness(.95); transition: .4s; }
 .detail-hero img:hover { filter: brightness(1.05); }
 .detail-hero .thumb { overflow: hidden; }
