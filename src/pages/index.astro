@@ -17,7 +17,7 @@ const storyImg = site.story.image ? { jpg: asset(site.story.image) } : photograp
 const ctaImg = photographed[5]?.featured || photographed[2]?.featured;
 const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some((p) => p.status === s));
 ---
-<BaseLayout>
+<BaseLayout description="Browse homes for sale and rent in Westchester County, New York, each built by hand by the Giaccio family. A curated collection from Giaccio Properties, founded by licensed builder Richard Giaccio.">
   <section class="hero">
     {hero && <img class="hero-bg" src={hero.jpg} alt="" />}
     <div class="wrap">

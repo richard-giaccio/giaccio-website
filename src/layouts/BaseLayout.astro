@@ -1,8 +1,26 @@
 ---
 import '../styles/global.css';
 import site from '../../data/site.json';
-const { title, description } = Astro.props;
+const { title, description, image, type = 'website', noindex = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const SITE = 'https://giaccioproperties.com';
+const canonicalURL = new URL((Astro.url.pathname.replace(/\/$/, '') || '/'), SITE).href;
+const pageTitle = title ? `${title} — Giaccio Properties` : 'Giaccio Properties — Homes Built by Hand in Westchester County, NY';
+const metaDesc = description || 'A family portfolio of homes built by hand across Westchester County, New York. Browse houses for sale and rent from Giaccio Properties, founded by licensed builder Richard Giaccio.';
+const ogImage = new URL(image || '/assets/properties/ashwood-road-19-south-salem/main.jpg', SITE).href;
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: 'Giaccio Properties',
+  url: SITE,
+  image: ogImage,
+  logo: new URL('/favicon.png', SITE).href,
+  email: site.contact.email,
+  areaServed: { '@type': 'AdministrativeArea', name: 'Westchester County, New York' },
+  address: { '@type': 'PostalAddress', streetAddress: '143 Bedford Rd', addressLocality: 'Katonah', addressRegion: 'NY', postalCode: '10536', addressCountry: 'US' },
+  founder: { '@type': 'Person', name: 'Richard Giaccio', jobTitle: 'Licensed Builder', identifier: 'License #40GI1153960' },
+  knowsAbout: ['Custom home building', 'Residential real estate', 'Westchester County homes'],
+};
 const showPhone = site.contact.phone && !site.contact.phone.startsWith('[');
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address || '')}`;
 const nav = [
@@ -20,8 +38,24 @@ const nav = [
     <script is:inline>
       (function () { try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); } catch (e) {} })();
     </script>
-    <title>{title ? `${title} — Giaccio Properties` : 'Giaccio Properties — Westchester County Real Estate'}</title>
-    <meta name="description" content={description || 'A family portfolio of homes built across Westchester County, New York.'} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDesc} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="theme-color" content="#14140f" />
+    <meta name="author" content="Giaccio Properties" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Giaccio Properties" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDesc} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
     <link rel="apple-touch-icon" href={`${base}/favicon.png`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,7 +101,7 @@ const nav = [
         </div>
         <div class="foot-bottom">
           <span>&copy; {new Date().getFullYear()} Giaccio Properties. All rights reserved.</span>
-          <span>Founded by Rich Giaccio · Westchester County, NY</span>
+          <span>Founded by Richard Giaccio, Licensed Builder (License #40GI1153960) · Westchester County, NY</span>
         </div>
       </div>
     </footer>

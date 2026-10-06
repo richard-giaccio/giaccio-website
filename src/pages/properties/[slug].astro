@@ -26,8 +26,32 @@ const rows = Math.max(thumbs.length, 1);
 const mapQuery = `${p.displayAddress}, ${p.location}`;
 const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+
+const SITE = 'https://giaccioproperties.com';
+const pageUrl = `${SITE}/properties/${p.slug}`;
+const heroAbs = new URL(hero ? hero.jpg : '/assets/properties/ashwood-road-19-south-salem/main.jpg', SITE).href;
+const metaDesc = `${p.displayAddress} in ${p.location}${price ? ` — ${price}` : ''}. A Giaccio Properties home, built by hand in Westchester County, New York. View photos, details, and location.`;
+const propertySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Residence',
+  name: mapQuery,
+  url: pageUrl,
+  image: heroAbs,
+  address: { '@type': 'PostalAddress', streetAddress: p.displayAddress, addressLocality: p.town, addressRegion: p.state, addressCountry: 'US' },
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'The Collection', item: `${SITE}/#listings` },
+    { '@type': 'ListItem', position: 3, name: mapQuery, item: pageUrl },
+  ],
+};
 ---
-<BaseLayout title={p.displayAddress} description={`${p.displayAddress}, ${p.location}`}>
+<BaseLayout title={mapQuery} description={metaDesc} image={hero ? hero.jpg : undefined} type="article">
+  <script type="application/ld+json" set:html={JSON.stringify(propertySchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {p.hasPhotos ? (
     <div class={`detail-hero${thumbs.length === 0 ? ' nothumbs' : ''}`} style={`grid-template-rows: repeat(${rows}, 1fr);`}>
       <div class="main" style={`grid-row: 1 / ${rows + 1};`}><img src={hero.jpg} data-full={hero.jpg} alt={p.displayAddress} class="lb" /></div>
