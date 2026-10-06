@@ -12971,5 +12971,60 @@
         "height": 683
       }
     ]
+  },
+  "Adam_s Hill Rd (#2) - Cross River": {
+    "slug": "adam-s-hill-rd-2-cross-river",
+    "images": [],
+    "main": {
+      "full": "assets/properties/adam-s-hill-rd-2-cross-river/main.jpg",
+      "webp": "assets/properties/adam-s-hill-rd-2-cross-river/main.webp",
+      "thumb": "assets/properties/adam-s-hill-rd-2-cross-river/main-thumb.webp",
+      "width": 1536,
+      "height": 1152
+    }
+  },
+  "Brundige Drive (#46) - Goldens Bridge": {
+    "slug": "brundige-drive-46-goldens-bridge",
+    "images": [],
+    "main": {
+      "full": "assets/properties/brundige-drive-46-goldens-bridge/main.jpg",
+      "webp": "assets/properties/brundige-drive-46-goldens-bridge/main.webp",
+      "thumb": "assets/properties/brundige-drive-46-goldens-bridge/main-thumb.webp",
+      "width": 1536,
+      "height": 1152
+    }
+  },
+  "Cross River Rd (#66) - Pound Ridge": {
+    "slug": "cross-river-rd-66-pound-ridge",
+    "images": [],
+    "main": {
+      "full": "assets/properties/cross-river-rd-66-pound-ridge/main.jpg",
+      "webp": "assets/properties/cross-river-rd-66-pound-ridge/main.webp",
+      "thumb": "assets/properties/cross-river-rd-66-pound-ridge/main-thumb.webp",
+      "width": 1536,
+      "height": 1152
+    }
+  },
+  "Heritage Hills - unit 425-D": {
+    "slug": "heritage-hills-unit-425-d",
+    "images": [],
+    "main": {
+      "full": "assets/properties/heritage-hills-unit-425-d/main.jpg",
+      "webp": "assets/properties/heritage-hills-unit-425-d/main.webp",
+      "thumb": "assets/properties/heritage-hills-unit-425-d/main-thumb.webp",
+      "width": 1024,
+      "height": 683
+    }
+  },
+  "Meadows - 92 Locust Ridge": {
+    "slug": "meadows-92-locust-ridge",
+    "images": [],
+    "main": {
+      "full": "assets/properties/meadows-92-locust-ridge/main.jpg",
+      "webp": "assets/properties/meadows-92-locust-ridge/main.webp",
+      "thumb": "assets/properties/meadows-92-locust-ridge/main-thumb.webp",
+      "width": 1072,
+      "height": 488
+    }
   }
 }
