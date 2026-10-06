@@ -27,6 +27,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 45
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 2400000
+          error_count: 50
