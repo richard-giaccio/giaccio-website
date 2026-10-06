@@ -18,7 +18,19 @@ const orgSchema = {
   email: site.contact.email,
   areaServed: { '@type': 'AdministrativeArea', name: 'Westchester County, New York' },
   address: { '@type': 'PostalAddress', streetAddress: '143 Bedford Rd', addressLocality: 'Katonah', addressRegion: 'NY', postalCode: '10536', addressCountry: 'US' },
-  founder: { '@type': 'Person', name: 'Richard Giaccio', jobTitle: 'Licensed Builder', identifier: 'License #40GI1153960' },
+  founder: {
+    '@type': 'Person',
+    name: 'Richard Giaccio',
+    jobTitle: 'Licensed Home Builder',
+    url: SITE + '/about',
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Builder License',
+      name: 'Licensed Home Builder',
+      identifier: '40GI1153960',
+    },
+    knowsAbout: ['Custom home building', 'Residential construction'],
+  },
   knowsAbout: ['Custom home building', 'Residential real estate', 'Westchester County homes'],
 };
 const showPhone = site.contact.phone && !site.contact.phone.startsWith('[');
