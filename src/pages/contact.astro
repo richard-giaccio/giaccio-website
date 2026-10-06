@@ -14,7 +14,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:960px;margin:0 auto;align-items:start;">
-        <form class="form" action="https://formspree.io/f/FORM_ID" method="POST">
+        <form class="form" id="contactForm" novalidate>
           <div class="field-row">
             <input name="name" placeholder="Your name" required />
             <input name="email" type="email" placeholder="Email address" required />
@@ -25,6 +25,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
           </div>
           <textarea name="message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
           <button class="btn" type="submit">Send Message</button>
+          <p id="formStatus" role="status" aria-live="polite" style="margin-top:14px;display:none;"></p>
         </form>
 
         <div>
@@ -59,8 +60,55 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
     </section>
   )}
   <script>
+    // Prefill "property" from ?property= on the URL
     const params = new URLSearchParams(location.search);
     const prop = params.get('property');
     if (prop) { const f = document.getElementById('propertyField'); if (f) f.value = prop; }
+
+    // Submit the contact form to Google Forms in the background (no redirect).
+    const GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSf6SyUkkeHnph1y0Zw5IqqSX3jt2PV-eb6lO7uNuuULSqLWJg/formResponse';
+    const ENTRY = {
+      name: 'entry.1933543268',
+      email: 'entry.1410632378',
+      phone: 'entry.1694255272',
+      property: 'entry.1000711556',
+      message: 'entry.1322574206',
+    };
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const btn = form && form.querySelector('button[type="submit"]');
+
+    function showStatus(msg, ok) {
+      if (!status) return;
+      status.textContent = msg;
+      status.style.display = 'block';
+      status.style.color = ok ? 'var(--gold-soft)' : '#c0392b';
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.name || !data.email || !data.message) {
+          showStatus('Please fill in your name, email, and message.', false);
+          return;
+        }
+        const body = new URLSearchParams();
+        for (const [key, entry] of Object.entries(ENTRY)) {
+          if (data[key]) body.append(entry, data[key]);
+        }
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+        try {
+          // no-cors: Google Forms accepts the POST but returns an opaque response.
+          await fetch(GFORM, { method: 'POST', mode: 'no-cors', body });
+          form.reset();
+          showStatus("Thank you. Your message has been sent, we'll be in touch soon.", true);
+        } catch (err) {
+          showStatus('Something went wrong sending your message. Please email us directly.', false);
+        } finally {
+          if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
+        }
+      });
+    }
   </script>
 </BaseLayout>
