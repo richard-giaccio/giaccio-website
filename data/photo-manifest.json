@@ -8722,15 +8722,7 @@
   "Old Pond Rd (#19) - South Salem": {
     "slug": "old-pond-rd-19-south-salem",
     "image_count": 1,
-    "images": [
-      {
-        "full": "assets/properties/old-pond-rd-19-south-salem/01.jpg",
-        "webp": "assets/properties/old-pond-rd-19-south-salem/01.webp",
-        "thumb": "assets/properties/old-pond-rd-19-south-salem/01-thumb.webp",
-        "width": 296,
-        "height": 222
-      }
-    ]
+    "images": []
   },
   "Pamela Lane (#9) - South Salem": {
     "slug": "pamela-lane-9-south-salem",
