@@ -13,12 +13,23 @@ function mapImg(i) {
 }
 
 // join listings to their photo set via the exact source_folder key
+// house number lives in the source folder as "(#19)"; mls_ref mirrors it
+function houseNumber(p) {
+  const m = (p.source_folder || '').match(/\(#\s*([^)]+?)\s*\)/);
+  if (m) return m[1].trim();
+  if (p.mls_ref != null && /^[0-9]/.test(String(p.mls_ref))) return String(p.mls_ref);
+  return null;
+}
+
 function enrich(p) {
   const entry = manifest[p.source_folder] || {};
   const images = (entry.images || []).map(mapImg);
   // hand-picked overrides (main.jpg / thumb1-3) win; otherwise fall back to numbered photos
   const main = entry.main ? mapImg(entry.main) : images[0] || null;
   const thumbs = (entry.thumbs && entry.thumbs.length ? entry.thumbs.map(mapImg) : images.slice(1)).slice(0, 3);
+  const num = houseNumber(p);
+  // e.g. "19 Ashwood Road"; falls back to the plain street when there is no number
+  const displayAddress = num ? `${num} ${p.address}` : p.address;
   return {
     ...p,
     images,
@@ -26,6 +37,7 @@ function enrich(p) {
     thumbs,
     featured: main,
     hasPhotos: images.length > 0 || !!entry.main,
+    displayAddress,
     location: [p.town, p.state].filter(Boolean).join(', '),
   };
 }

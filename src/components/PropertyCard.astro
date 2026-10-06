@@ -11,14 +11,14 @@ const href = `${base}/properties/${p.slug}`;
     {p.featured ? (
       <picture>
         <source srcset={p.featured.webp} type="image/webp" />
-        <img src={p.featured.jpg} alt={p.address} loading="lazy" />
+        <img src={p.featured.jpg} alt={p.displayAddress} loading="lazy" />
       </picture>
     ) : (
       <div class="noimg">Photos coming soon</div>
     )}
   </div>
   <div class="card-body">
-    <h3>{p.address}</h3>
+    <h3>{p.displayAddress}</h3>
     <div class="card-loc">{p.location}</div>
     {price ? <div class="card-price">{price}</div> : <div class="card-price tbd">Contact for details</div>}
     <div class="specs">
