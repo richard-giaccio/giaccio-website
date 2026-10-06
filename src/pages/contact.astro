@@ -20,7 +20,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
             <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email address" required />
           </div>
           <div class="field-row">
-            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-.\s]*" placeholder="10-digit phone (optional)" />
+            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-.\s]*" placeholder="Phone number (optional)" />
             <input name="property" id="propertyField" placeholder="Home you're interested in (optional)" />
           </div>
           <textarea name="message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
@@ -100,7 +100,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
           return;
         }
         if (phone && phone.replace(/\D/g, '').length !== 10) {
-          showStatus('Please enter a 10-digit phone number.', false);
+          showStatus('Phone number should be 10 digits.', false);
           return;
         }
         const body = new URLSearchParams();
