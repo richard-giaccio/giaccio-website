@@ -12,14 +12,14 @@
 
   "story": {
     "eyebrow": "Our Story",
-    "title": "Built by hand, kept in the family",
-    "founder_line": "Founded by John Giaccio",
+    "title": "Built by hand, generation to generation",
+    "founder_line": "Founded by Rich Giaccio, Licensed Builder",
     "image": "assets/properties/henker-farm-lane-1-armonk/01.jpg",
     "image_alt": "Inside a home built by the Giaccio family",
     "body": [
-      "Giaccio Properties began with John Giaccio and one belief: a home should be built to last, and built to be lived in. Every property in this collection was raised by our family, right here in Westchester County, with the same care we would give our own.",
+      "Giaccio Properties was founded by Rich Giaccio, a licensed builder, on one belief: a home should be built to last, and built to be lived in. Every property in this collection was raised by hand by John Giaccio and Rich Giaccio, right here in Westchester County, with the same care we would give our own.",
       "Over the years many of these homes have found their families and moved on. Others are rented and full of life today. And a few are still here, waiting for the right people to walk through the door.",
-      "Together they are more than listings. They are a family's life's work, and we are proud to share them with you."
+      "Together they are more than listings. They are two generations of a family's life's work, and we are proud to share them with you."
     ],
     "signature": "— The Giaccio Family"
   },
@@ -44,7 +44,7 @@
       "What started as one family building homes with their own hands has grown into a collection of properties, some sold to the families who now love them, some rented and lived in today, and some still available for the right owner.",
       "We know every one of these homes because we built them. When you reach out, you are talking to the family behind them, not a call center. Whether you want to buy, rent, or simply hear the story of a house, we are here."
     ],
-    "founder_note": "Every home in this collection was built by John Giaccio. [Optional: add a few lines about how he began and what building meant to him, and we'll feature it here.]",
+    "founder_note": "Giaccio Properties was founded by Rich Giaccio, a licensed builder. Every home in this collection was built by hand by John Giaccio and Rich Giaccio.",
     "signature": "— The Giaccio Family"
   },
 
