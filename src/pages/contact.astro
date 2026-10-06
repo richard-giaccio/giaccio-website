@@ -9,27 +9,27 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Get in Touch</p>
-        <h2>Talk to the family</h2>
+        <h1>Talk to the family</h1>
         <p>{site.contact.intro}</p>
       </div>
 
       <div class="contact-grid">
         <form class="form" id="contactForm" novalidate>
           <div class="field-row">
-            <input name="name" placeholder="Your name" required />
-            <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email address" required />
+            <input name="name" aria-label="Your name" placeholder="Your name" required />
+            <input name="email" type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Email address" required />
           </div>
           <div class="field-row">
-            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-.\s]*" placeholder="Phone number (optional)" />
-            <input name="property" id="propertyField" placeholder="Home you're interested in (optional)" />
+            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-.\s]*" aria-label="Phone number (optional)" placeholder="Phone number (optional)" />
+            <input name="property" id="propertyField" aria-label="Home you're interested in (optional)" placeholder="Home you're interested in (optional)" />
           </div>
-          <textarea name="message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
+          <textarea name="message" aria-label="Your message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
           <button class="btn" type="submit">Send Message</button>
           <p id="formStatus" role="status" aria-live="polite" style="margin-top:14px;display:none;"></p>
         </form>
 
         <div>
-          <h3>Reach us directly</h3>
+          <h2>Reach us directly</h2>
           <p style="margin-top:14px;">Email<br /><a href={`mailto:${site.contact.email}`} style="color:var(--gold-soft);font-weight:600;">{site.contact.email}</a></p>
           {showPhone && <p>Phone<br /><a href={`tel:${site.contact.phone}`} style="color:var(--gold-soft);font-weight:600;">{site.contact.phone}</a></p>}
           {site.contact.address && <p>Visit<br /><a href={mapsUrl} target="_blank" rel="noopener" style="color:var(--gold-soft);font-weight:600;">{site.contact.address}</a></p>}
@@ -82,7 +82,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
       if (!status) return;
       status.textContent = msg;
       status.style.display = 'block';
-      status.style.color = ok ? 'var(--gold-soft)' : '#c0392b';
+      status.style.color = ok ? 'var(--gold-soft)' : 'var(--error)';
     }
 
     if (form) {

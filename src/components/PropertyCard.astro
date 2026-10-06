@@ -10,8 +10,8 @@ const href = `${base}/properties/${p.slug}`;
     {p.status && <span class={`badge ${p.status}`}>{statusLabel(p.status)}</span>}
     {p.featured ? (
       <picture>
-        <source srcset={p.featured.webp} type="image/webp" />
-        <img src={p.featured.jpg} alt={p.displayAddress} loading="lazy" />
+        <source srcset={p.featured.thumb} type="image/webp" />
+        <img src={p.featured.jpg} alt={p.displayAddress} loading="lazy" decoding="async" />
       </picture>
     ) : (
       <div class="noimg">Photos coming soon</div>

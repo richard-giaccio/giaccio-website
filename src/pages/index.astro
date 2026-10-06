@@ -19,7 +19,12 @@ const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some
 ---
 <BaseLayout description="Browse homes for sale and rent in Westchester County, New York, each built by hand by the Giaccio family. A curated collection from Giaccio Properties, founded by licensed builder Richard Giaccio.">
   <section class="hero">
-    {hero && <img class="hero-bg" src={hero.jpg} alt="" />}
+    {hero && (
+      <picture>
+        <source srcset={hero.webp} type="image/webp" />
+        <img class="hero-bg" src={hero.jpg} alt="" fetchpriority="high" decoding="async" />
+      </picture>
+    )}
     <div class="wrap">
       <p class="eyebrow" style="color:var(--gold-soft)">{site.hero.eyebrow}</p>
       <h1>{site.hero.title}</h1>
@@ -97,10 +102,10 @@ const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some
         )}
 
         <div class="select-wrap">
-          <select class="msel" id="fTown"><option value="">All Towns</option>{towns.map((t) => <option value={t}>{t}</option>)}</select>
+          <select class="msel" id="fTown" aria-label="Filter homes by town"><option value="">All Towns</option>{towns.map((t) => <option value={t}>{t}</option>)}</select>
         </div>
 
-        <input class="msearch" id="fSearch" type="search" placeholder="Search address or town" />
+        <input class="msearch" id="fSearch" type="search" aria-label="Search homes by address or town" placeholder="Search address or town" />
         <span class="result-count" id="count"></span>
       </div>
 

@@ -80,14 +80,14 @@ const breadcrumbSchema = {
 
         {p.images.length > 1 && (
           <>
-            <h3 style="margin-top:40px;">Gallery</h3>
+            <h2 style="margin-top:40px;">Gallery</h2>
             <div class="gallery">
               {p.images.map((img) => <img src={img.thumb} data-full={img.jpg} alt={p.displayAddress} class="lb" loading="lazy" />)}
             </div>
           </>
         )}
 
-        <h3 style="margin-top:40px;">Location</h3>
+        <h2 style="margin-top:40px;">Location</h2>
         <a class="map-address" href={mapLink} target="_blank" rel="noopener" style="display:inline-block;margin-bottom:12px;color:var(--gold-soft);font-weight:600;">{p.displayAddress}, {p.location}</a>
         <div class="map-wrap">
           <iframe
@@ -102,7 +102,7 @@ const breadcrumbSchema = {
 
       <aside>
         <div class="aside-card">
-          <h3>Interested?</h3>
+          <h2>Interested?</h2>
           <p>Request a private showing or more information about {p.displayAddress}.</p>
           <a href={`${base}/contact?property=${encodeURIComponent(p.displayAddress + ', ' + p.location)}`} class="btn" style="width:100%;text-align:center;">Request Info</a>
           <p style="margin-top:20px;font-size:.9rem;">Or email us directly at<br /><a href="mailto:info@giaccioproperties.com" style="color:var(--gold-soft);font-weight:600;">info@giaccioproperties.com</a></p>
@@ -112,16 +112,45 @@ const breadcrumbSchema = {
     <p style="padding-bottom:60px;"><a href={`${base}/#listings`} style="color:var(--gold-soft);font-weight:600;">&larr; Back to all listings</a></p>
   </div>
 
-  <div id="lightbox" class="lightbox">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged property photo" aria-hidden="true" tabindex="-1">
+    <button id="lbClose" class="lb-close" type="button" aria-label="Close photo">&times;</button>
     <img id="lbImg" alt="" />
   </div>
   <script>
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
-    document.querySelectorAll('img.lb').forEach((im) => im.addEventListener('click', () => {
-      lbImg.src = im.dataset.full; lb.style.display = 'flex';
-    }));
-    lb.addEventListener('click', () => { lb.style.display = 'none'; lbImg.src = ''; });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { lb.style.display = 'none'; } });
+    const lbClose = document.getElementById('lbClose');
+    let lastTrigger = null;
+
+    function openLb(im) {
+      lastTrigger = im;
+      lbImg.src = im.dataset.full;
+      lbImg.alt = im.alt || 'Enlarged property photo';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      lb.focus();
+    }
+    function closeLb() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      lbImg.alt = '';
+      if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
+    }
+
+    document.querySelectorAll('img.lb').forEach((im) => {
+      im.setAttribute('role', 'button');
+      im.setAttribute('tabindex', '0');
+      if (!im.getAttribute('aria-label')) im.setAttribute('aria-label', 'View larger photo');
+      im.addEventListener('click', () => openLb(im));
+      im.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(im); }
+      });
+    });
+    lb.addEventListener('click', (e) => { if (e.target !== lbClose) closeLb(); });
+    lbClose.addEventListener('click', closeLb);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
+    });
   </script>
 </BaseLayout>
