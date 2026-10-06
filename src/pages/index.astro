@@ -17,7 +17,7 @@ const storyImg = site.story.image ? { jpg: asset(site.story.image) } : photograp
 const ctaImg = photographed[5]?.featured || photographed[2]?.featured;
 const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some((p) => p.status === s));
 ---
-<BaseLayout description="Browse homes for sale and rent in Westchester County, New York, each built by hand by the Giaccio family. A curated collection from Giaccio Properties, founded by licensed builder Richard Giaccio.">
+<BaseLayout description="Browse homes for sale and rent in Westchester County, New York, each built by hand by the Giaccio family. A curated collection from Giaccio Properties, a family of licensed builders.">
   <section class="hero">
     {hero && (
       <picture>
@@ -33,31 +33,6 @@ const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some
       <a href="#listings" class="btn">{site.hero.cta}</a>
     </div>
     <div class="scroll-cue">Scroll</div>
-  </section>
-
-  <!-- Our Story -->
-  <section class="section">
-    <div class="wrap">
-      <div class="story">
-        <div class="story-img" data-reveal>
-          {storyImg && <img src={storyImg.jpg} alt={site.story.image_alt || 'A Giaccio family home'} />}
-        </div>
-        <div data-reveal data-delay="1">
-          <p class="eyebrow">{site.story.eyebrow}</p>
-          <h2>{site.story.title}</h2>
-          <div class="gold-rule"></div>
-          {site.story.founder_line && <p class="founder-line">{site.story.founder_line}</p>}
-          {site.story.body.map((para) => <p>{para}</p>)}
-          <div class="signature">{site.story.signature}</div>
-        </div>
-      </div>
-
-      <div class="stats">
-        <div class="stat" data-reveal><div class="num">{all.length}</div><div class="lbl">Homes Built</div></div>
-        <div class="stat" data-reveal data-delay="1"><div class="num">{towns.length}</div><div class="lbl">Communities</div></div>
-        <div class="stat" data-reveal data-delay="2"><div class="num">1</div><div class="lbl">Family Behind Them</div></div>
-      </div>
-    </div>
   </section>
 
   <!-- The Collection -->
