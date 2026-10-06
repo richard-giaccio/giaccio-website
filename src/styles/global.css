@@ -169,6 +169,7 @@ p { margin: 0 0 1.1rem; }
 .form ::placeholder { color: var(--muted); }
 .form textarea { min-height: 160px; resize: vertical; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 960px; margin: 0 auto; align-items: start; }
 
 /* footer */
 .site-footer { background: #0a0b09; color: var(--body); padding: 80px 0 34px; border-top: 1px solid var(--line); }
@@ -198,6 +199,8 @@ p { margin: 0 0 1.1rem; }
   .detail-body { grid-template-columns: 1fr; gap: 34px; padding: 50px 0; }
   .aside-card { position: static; }
   .field-row { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .map-wrap { height: 320px; }
   .site-footer .cols { grid-template-columns: 1fr; }
   .section { padding: 80px 0; }
   .wrap { padding: 0 20px; }
