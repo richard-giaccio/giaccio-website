@@ -3513,6 +3513,36 @@
         "width": 296,
         "height": 222
       }
+    ],
+    "main": {
+      "full": "assets/properties/dogwood-lane-1-pound-ridge/main.jpg",
+      "webp": "assets/properties/dogwood-lane-1-pound-ridge/main.webp",
+      "thumb": "assets/properties/dogwood-lane-1-pound-ridge/main-thumb.webp",
+      "width": 296,
+      "height": 222
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/dogwood-lane-1-pound-ridge/thumb1.jpg",
+        "webp": "assets/properties/dogwood-lane-1-pound-ridge/thumb1.webp",
+        "thumb": "assets/properties/dogwood-lane-1-pound-ridge/thumb1-thumb.webp",
+        "width": 296,
+        "height": 222
+      },
+      {
+        "full": "assets/properties/dogwood-lane-1-pound-ridge/thumb2.jpg",
+        "webp": "assets/properties/dogwood-lane-1-pound-ridge/thumb2.webp",
+        "thumb": "assets/properties/dogwood-lane-1-pound-ridge/thumb2-thumb.webp",
+        "width": 296,
+        "height": 222
+      },
+      {
+        "full": "assets/properties/dogwood-lane-1-pound-ridge/thumb3.jpg",
+        "webp": "assets/properties/dogwood-lane-1-pound-ridge/thumb3.webp",
+        "thumb": "assets/properties/dogwood-lane-1-pound-ridge/thumb3-thumb.webp",
+        "width": 296,
+        "height": 222
+      }
     ]
   },
   "Harriet Lane (#3) - Goldens Bridge": {
@@ -4852,6 +4882,36 @@
         "thumb": "assets/properties/laurie-lane-13-south-salem/36-thumb.webp",
         "width": 295,
         "height": 222
+      }
+    ],
+    "main": {
+      "full": "assets/properties/laurie-lane-13-south-salem/main.jpg",
+      "webp": "assets/properties/laurie-lane-13-south-salem/main.webp",
+      "thumb": "assets/properties/laurie-lane-13-south-salem/main-thumb.webp",
+      "width": 296,
+      "height": 197
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/laurie-lane-13-south-salem/thumb1.jpg",
+        "webp": "assets/properties/laurie-lane-13-south-salem/thumb1.webp",
+        "thumb": "assets/properties/laurie-lane-13-south-salem/thumb1-thumb.webp",
+        "width": 296,
+        "height": 222
+      },
+      {
+        "full": "assets/properties/laurie-lane-13-south-salem/thumb2.jpg",
+        "webp": "assets/properties/laurie-lane-13-south-salem/thumb2.webp",
+        "thumb": "assets/properties/laurie-lane-13-south-salem/thumb2-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/laurie-lane-13-south-salem/thumb3.jpg",
+        "webp": "assets/properties/laurie-lane-13-south-salem/thumb3.webp",
+        "thumb": "assets/properties/laurie-lane-13-south-salem/thumb3-thumb.webp",
+        "width": 296,
+        "height": 198
       }
     ]
   },
@@ -6234,6 +6294,36 @@
         "width": 1024,
         "height": 682
       }
+    ],
+    "main": {
+      "full": "assets/properties/meadows-51-winterberry-circle/main.jpg",
+      "webp": "assets/properties/meadows-51-winterberry-circle/main.webp",
+      "thumb": "assets/properties/meadows-51-winterberry-circle/main-thumb.webp",
+      "width": 480,
+      "height": 360
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/meadows-51-winterberry-circle/thumb1.jpg",
+        "webp": "assets/properties/meadows-51-winterberry-circle/thumb1.webp",
+        "thumb": "assets/properties/meadows-51-winterberry-circle/thumb1-thumb.webp",
+        "width": 480,
+        "height": 360
+      },
+      {
+        "full": "assets/properties/meadows-51-winterberry-circle/thumb2.jpg",
+        "webp": "assets/properties/meadows-51-winterberry-circle/thumb2.webp",
+        "thumb": "assets/properties/meadows-51-winterberry-circle/thumb2-thumb.webp",
+        "width": 480,
+        "height": 360
+      },
+      {
+        "full": "assets/properties/meadows-51-winterberry-circle/thumb3.jpg",
+        "webp": "assets/properties/meadows-51-winterberry-circle/thumb3.webp",
+        "thumb": "assets/properties/meadows-51-winterberry-circle/thumb3-thumb.webp",
+        "width": 1024,
+        "height": 682
+      }
     ]
   },
   "Meadows - 6 Briar Court": {
@@ -7144,6 +7234,36 @@
         "thumb": "assets/properties/meeting-house-rd-110-mt-kisco/35-thumb.webp",
         "width": 296,
         "height": 222
+      }
+    ],
+    "main": {
+      "full": "assets/properties/meeting-house-rd-110-mt-kisco/main.jpg",
+      "webp": "assets/properties/meeting-house-rd-110-mt-kisco/main.webp",
+      "thumb": "assets/properties/meeting-house-rd-110-mt-kisco/main-thumb.webp",
+      "width": 296,
+      "height": 222
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/meeting-house-rd-110-mt-kisco/thumb1.jpg",
+        "webp": "assets/properties/meeting-house-rd-110-mt-kisco/thumb1.webp",
+        "thumb": "assets/properties/meeting-house-rd-110-mt-kisco/thumb1-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/meeting-house-rd-110-mt-kisco/thumb2.jpg",
+        "webp": "assets/properties/meeting-house-rd-110-mt-kisco/thumb2.webp",
+        "thumb": "assets/properties/meeting-house-rd-110-mt-kisco/thumb2-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/meeting-house-rd-110-mt-kisco/thumb3.jpg",
+        "webp": "assets/properties/meeting-house-rd-110-mt-kisco/thumb3.webp",
+        "thumb": "assets/properties/meeting-house-rd-110-mt-kisco/thumb3-thumb.webp",
+        "width": 296,
+        "height": 197
       }
     ]
   },
@@ -8791,6 +8911,36 @@
         "width": 296,
         "height": 222
       }
+    ],
+    "main": {
+      "full": "assets/properties/pamela-lane-9-south-salem/main.jpg",
+      "webp": "assets/properties/pamela-lane-9-south-salem/main.webp",
+      "thumb": "assets/properties/pamela-lane-9-south-salem/main-thumb.webp",
+      "width": 296,
+      "height": 197
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/pamela-lane-9-south-salem/thumb1.jpg",
+        "webp": "assets/properties/pamela-lane-9-south-salem/thumb1.webp",
+        "thumb": "assets/properties/pamela-lane-9-south-salem/thumb1-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/pamela-lane-9-south-salem/thumb2.jpg",
+        "webp": "assets/properties/pamela-lane-9-south-salem/thumb2.webp",
+        "thumb": "assets/properties/pamela-lane-9-south-salem/thumb2-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/pamela-lane-9-south-salem/thumb3.jpg",
+        "webp": "assets/properties/pamela-lane-9-south-salem/thumb3.webp",
+        "thumb": "assets/properties/pamela-lane-9-south-salem/thumb3-thumb.webp",
+        "width": 296,
+        "height": 197
+      }
     ]
   },
   "Quarry Lane (#14) - Bedford": {
@@ -9667,6 +9817,36 @@
         "full": "assets/properties/salem-rd-266-pound-ridge/31.jpg",
         "webp": "assets/properties/salem-rd-266-pound-ridge/31.webp",
         "thumb": "assets/properties/salem-rd-266-pound-ridge/31-thumb.webp",
+        "width": 296,
+        "height": 197
+      }
+    ],
+    "main": {
+      "full": "assets/properties/salem-rd-266-pound-ridge/main.jpg",
+      "webp": "assets/properties/salem-rd-266-pound-ridge/main.webp",
+      "thumb": "assets/properties/salem-rd-266-pound-ridge/main-thumb.webp",
+      "width": 296,
+      "height": 221
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/salem-rd-266-pound-ridge/thumb1.jpg",
+        "webp": "assets/properties/salem-rd-266-pound-ridge/thumb1.webp",
+        "thumb": "assets/properties/salem-rd-266-pound-ridge/thumb1-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/salem-rd-266-pound-ridge/thumb2.jpg",
+        "webp": "assets/properties/salem-rd-266-pound-ridge/thumb2.webp",
+        "thumb": "assets/properties/salem-rd-266-pound-ridge/thumb2-thumb.webp",
+        "width": 296,
+        "height": 197
+      },
+      {
+        "full": "assets/properties/salem-rd-266-pound-ridge/thumb3.jpg",
+        "webp": "assets/properties/salem-rd-266-pound-ridge/thumb3.webp",
+        "thumb": "assets/properties/salem-rd-266-pound-ridge/thumb3-thumb.webp",
         "width": 296,
         "height": 197
       }
@@ -10757,7 +10937,14 @@
         "width": 296,
         "height": 222
       }
-    ]
+    ],
+    "main": {
+      "full": "assets/properties/thornbrook-lane-15-bedford/main.jpg",
+      "webp": "assets/properties/thornbrook-lane-15-bedford/main.webp",
+      "thumb": "assets/properties/thornbrook-lane-15-bedford/main-thumb.webp",
+      "width": 296,
+      "height": 222
+    }
   },
   "Thornbrook Lane (#17) - Bedford": {
     "slug": "thornbrook-lane-17-bedford",
@@ -10770,7 +10957,14 @@
         "width": 296,
         "height": 222
       }
-    ]
+    ],
+    "main": {
+      "full": "assets/properties/thornbrook-lane-17-bedford/main.jpg",
+      "webp": "assets/properties/thornbrook-lane-17-bedford/main.webp",
+      "thumb": "assets/properties/thornbrook-lane-17-bedford/main-thumb.webp",
+      "width": 296,
+      "height": 222
+    }
   },
   "Thornbrook Lane (#9) - Bedford": {
     "slug": "thornbrook-lane-9-bedford",
@@ -10843,6 +11037,36 @@
         "full": "assets/properties/thornbrook-lane-9-bedford/10.jpg",
         "webp": "assets/properties/thornbrook-lane-9-bedford/10.webp",
         "thumb": "assets/properties/thornbrook-lane-9-bedford/10-thumb.webp",
+        "width": 296,
+        "height": 222
+      }
+    ],
+    "main": {
+      "full": "assets/properties/thornbrook-lane-9-bedford/main.jpg",
+      "webp": "assets/properties/thornbrook-lane-9-bedford/main.webp",
+      "thumb": "assets/properties/thornbrook-lane-9-bedford/main-thumb.webp",
+      "width": 296,
+      "height": 196
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/thornbrook-lane-9-bedford/thumb1.jpg",
+        "webp": "assets/properties/thornbrook-lane-9-bedford/thumb1.webp",
+        "thumb": "assets/properties/thornbrook-lane-9-bedford/thumb1-thumb.webp",
+        "width": 296,
+        "height": 222
+      },
+      {
+        "full": "assets/properties/thornbrook-lane-9-bedford/thumb2.jpg",
+        "webp": "assets/properties/thornbrook-lane-9-bedford/thumb2.webp",
+        "thumb": "assets/properties/thornbrook-lane-9-bedford/thumb2-thumb.webp",
+        "width": 296,
+        "height": 222
+      },
+      {
+        "full": "assets/properties/thornbrook-lane-9-bedford/thumb3.jpg",
+        "webp": "assets/properties/thornbrook-lane-9-bedford/thumb3.webp",
+        "thumb": "assets/properties/thornbrook-lane-9-bedford/thumb3-thumb.webp",
         "width": 296,
         "height": 222
       }
@@ -11848,7 +12072,14 @@
         "width": 296,
         "height": 222
       }
-    ]
+    ],
+    "main": {
+      "full": "assets/properties/wampus-court-4-somers-2000/main.jpg",
+      "webp": "assets/properties/wampus-court-4-somers-2000/main.webp",
+      "thumb": "assets/properties/wampus-court-4-somers-2000/main-thumb.webp",
+      "width": 296,
+      "height": 222
+    }
   },
   "Wampus Court (#6) - Somers - 2000": {
     "slug": "wampus-court-6-somers-2000",
