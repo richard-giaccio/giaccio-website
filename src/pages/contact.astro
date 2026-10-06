@@ -17,10 +17,10 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
         <form class="form" id="contactForm" novalidate>
           <div class="field-row">
             <input name="name" placeholder="Your name" required />
-            <input name="email" type="email" placeholder="Email address" required />
+            <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email address" required />
           </div>
           <div class="field-row">
-            <input name="phone" placeholder="Phone (optional)" />
+            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" pattern="[0-9()\-.\s]*" placeholder="10-digit phone (optional)" />
             <input name="property" id="propertyField" placeholder="Home you're interested in (optional)" />
           </div>
           <textarea name="message" placeholder="Tell us what you're looking for, or ask about any home..." required></textarea>
@@ -89,8 +89,18 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(form).entries());
-        if (!data.name || !data.email || !data.message) {
+        const email = (data.email || '').trim();
+        const phone = (data.phone || '').trim();
+        if (!data.name || !email || !data.message) {
           showStatus('Please fill in your name, email, and message.', false);
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showStatus('Please enter a valid email address.', false);
+          return;
+        }
+        if (phone && phone.replace(/\D/g, '').length !== 10) {
+          showStatus('Please enter a 10-digit phone number.', false);
           return;
         }
         const body = new URLSearchParams();
