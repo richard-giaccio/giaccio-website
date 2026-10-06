@@ -1,0 +1,49 @@
+# Giaccio Properties
+
+> Giaccio Properties is a family-run home builder and real estate portfolio in Westchester County, New York. The company was founded by Richard Giaccio, a licensed builder (License #40GI1153960). Every home in the collection was built by hand by John Giaccio and Richard Giaccio. The website at https://giaccioproperties.com showcases these homes, which are offered for sale and for rent across Westchester County and nearby towns.
+
+Giaccio Properties is not a brokerage listing third-party inventory. It is the builder's own collection of homes: houses the Giaccio family designed and constructed themselves, two generations of building. Some homes are for sale, some are rented and occupied, and some are available now. The site exists so prospective buyers and renters can browse the homes, see photos and locations, and contact the family directly.
+
+## About
+
+- Founder: Richard Giaccio, Licensed Builder (License #40GI1153960)
+- Homes built by: John Giaccio and Richard Giaccio
+- Business type: family-owned home builder and residential real estate
+- Service area: Westchester County, New York, and adjacent towns
+- Office: 143 Bedford Rd, Katonah, NY 10536
+- Contact email: info@giaccioproperties.com
+
+## Key pages
+
+- [Home](https://giaccioproperties.com/): the full collection of homes with photos and locations
+- [Our Story](https://giaccioproperties.com/about/): the Giaccio family history and building philosophy
+- [Contact](https://giaccioproperties.com/contact/): reach the Giaccio family directly about any home
+
+## The collection
+
+The site lists roughly 70 homes. Each has its own page at
+`https://giaccioproperties.com/properties/<slug>/` with photos, details, and an embedded map of the
+property's location. Listing pages are titled by street address (for example, "19 Ashwood Road,
+South Salem, NY").
+
+Towns represented include: Cross River, South Salem, Briarcliff Manor, Pound Ridge, Bedford,
+Mt Kisco, Goldens Bridge, Armonk, Bedford Hills, Waccabuc, Rye, Katonah, North Salem, Somers,
+Harrison (Westchester County, NY) and Ridgefield (Fairfield County, CT).
+
+## For buyers and renters
+
+- Homes are offered both for sale and for rent.
+- Pricing is often "contact for pricing"; reach out by the contact form or email for details on a
+  specific home.
+- Because these are builder-owned homes, questions about construction, materials, and the homes'
+  history can be answered directly by the family.
+
+## Machine-readable resources
+
+- [Sitemap](https://giaccioproperties.com/sitemap-index.xml): every indexable page
+- [robots.txt](https://giaccioproperties.com/robots.txt): crawl rules
+
+## Notes
+
+- Preferred contact is the contact form on the site or info@giaccioproperties.com.
+- The site is informational for the builder's own homes; it is not a multi-brokerage search portal.
