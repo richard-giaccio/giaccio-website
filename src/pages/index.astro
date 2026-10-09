@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PropertyCard from '../components/PropertyCard.astro';
+import MarketSection from '../components/MarketSection.astro';
 import { getProperties, getTowns, statusLabel, asset } from '../lib/properties.js';
 import site from '../../data/site.json';
 
@@ -90,6 +91,8 @@ const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some
       <p id="noResults" style="display:none;text-align:center;color:var(--muted);padding:40px;">No homes match those filters.</p>
     </div>
   </section>
+
+  <MarketSection />
 
   <!-- Our Story -->
   <section class="section">
