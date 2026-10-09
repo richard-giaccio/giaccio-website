@@ -8722,7 +8722,15 @@
   "Old Pond Rd (#19) - South Salem": {
     "slug": "old-pond-rd-19-south-salem",
     "image_count": 1,
-    "images": []
+    "images": [
+      {
+        "full": "assets/properties/old-pond-rd-19-south-salem/01.jpg",
+        "webp": "assets/properties/old-pond-rd-19-south-salem/01.webp",
+        "thumb": "assets/properties/old-pond-rd-19-south-salem/01-thumb.webp",
+        "width": 296,
+        "height": 222
+      }
+    ]
   },
   "Pamela Lane (#9) - South Salem": {
     "slug": "pamela-lane-9-south-salem",
@@ -12972,59 +12980,215 @@
       }
     ]
   },
-  "Adam_s Hill Rd (#2) - Cross River": {
-    "slug": "adam-s-hill-rd-2-cross-river",
-    "images": [],
+  "Castle Hill - unit 2D - Bedford Hills condo": {
+    "slug": "castle-hill-unit-2d-bedford-hills-condo",
+    "image_count": 25,
+    "images": [
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/01.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/01.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/01-thumb.webp",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/02.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/02.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/02-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/03.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/03.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/03-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/04.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/04.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/04-thumb.webp",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/05.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/05.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/05-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/06.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/06.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/06-thumb.webp",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/07.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/07.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/07-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/08.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/08.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/08-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/09.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/09.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/09-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/10.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/10.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/10-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/11.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/11.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/11-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/12.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/12.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/12-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/13.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/13.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/13-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/14.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/14.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/14-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/15.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/15.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/15-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/16.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/16.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/16-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/17.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/17.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/17-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/18.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/18.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/18-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/19.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/19.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/19-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/20.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/20.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/20-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/21.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/21.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/21-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/22.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/22.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/22-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/23.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/23.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/23-thumb.webp",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/24.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/24.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/24-thumb.webp",
+        "width": 1600,
+        "height": 1065
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/25.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/25.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/25-thumb.webp",
+        "width": 1600,
+        "height": 1065
+      }
+    ],
     "main": {
-      "full": "assets/properties/adam-s-hill-rd-2-cross-river/main.jpg",
-      "webp": "assets/properties/adam-s-hill-rd-2-cross-river/main.webp",
-      "thumb": "assets/properties/adam-s-hill-rd-2-cross-river/main-thumb.webp",
-      "width": 1536,
-      "height": 1152
-    }
-  },
-  "Brundige Drive (#46) - Goldens Bridge": {
-    "slug": "brundige-drive-46-goldens-bridge",
-    "images": [],
-    "main": {
-      "full": "assets/properties/brundige-drive-46-goldens-bridge/main.jpg",
-      "webp": "assets/properties/brundige-drive-46-goldens-bridge/main.webp",
-      "thumb": "assets/properties/brundige-drive-46-goldens-bridge/main-thumb.webp",
-      "width": 1536,
-      "height": 1152
-    }
-  },
-  "Cross River Rd (#66) - Pound Ridge": {
-    "slug": "cross-river-rd-66-pound-ridge",
-    "images": [],
-    "main": {
-      "full": "assets/properties/cross-river-rd-66-pound-ridge/main.jpg",
-      "webp": "assets/properties/cross-river-rd-66-pound-ridge/main.webp",
-      "thumb": "assets/properties/cross-river-rd-66-pound-ridge/main-thumb.webp",
-      "width": 1536,
-      "height": 1152
-    }
-  },
-  "Heritage Hills - unit 425-D": {
-    "slug": "heritage-hills-unit-425-d",
-    "images": [],
-    "main": {
-      "full": "assets/properties/heritage-hills-unit-425-d/main.jpg",
-      "webp": "assets/properties/heritage-hills-unit-425-d/main.webp",
-      "thumb": "assets/properties/heritage-hills-unit-425-d/main-thumb.webp",
-      "width": 1024,
-      "height": 683
-    }
-  },
-  "Meadows - 92 Locust Ridge": {
-    "slug": "meadows-92-locust-ridge",
-    "images": [],
-    "main": {
-      "full": "assets/properties/meadows-92-locust-ridge/main.jpg",
-      "webp": "assets/properties/meadows-92-locust-ridge/main.webp",
-      "thumb": "assets/properties/meadows-92-locust-ridge/main-thumb.webp",
-      "width": 1072,
-      "height": 488
-    }
+      "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/main.jpg",
+      "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/main.webp",
+      "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/main-thumb.webp",
+      "width": 1600,
+      "height": 1066
+    },
+    "thumbs": [
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb1.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb1.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb1-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb2.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb2.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb2-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "full": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb3.jpg",
+        "webp": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb3.webp",
+        "thumb": "assets/properties/castle-hill-unit-2d-bedford-hills-condo/thumb3-thumb.webp",
+        "width": 1600,
+        "height": 1066
+      }
+    ]
   }
 }
