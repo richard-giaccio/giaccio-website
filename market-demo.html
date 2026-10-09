@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westchester Market — FRED demo</title>
+<style>
+  :root{
+    --ink:#1c2733; --muted:#6b7a8d; --line:#e4e9ef; --bg:#fbfcfd;
+    --accent:#2f6f4f; --accent-soft:#e8f1ec; --down:#b4472f; --up:#2f6f4f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:40px 24px 64px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px}
+  h1{font-size:30px;line-height:1.2;margin:0 0 6px;font-weight:700}
+  .sub{color:var(--muted);margin:0 0 28px;font-size:15px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+  .card .label{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+  .card .value{font-size:27px;font-weight:700;margin:6px 0 2px;letter-spacing:-.01em}
+  .chg{font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:4px}
+  .chg.up{color:var(--up)} .chg.down{color:var(--down)}
+  .chg .yoy{color:var(--muted);font-weight:500;margin-left:4px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 10px;margin-bottom:22px}
+  .panel-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .panel-head h2{font-size:16px;margin:0;font-weight:700}
+  .panel-head .hint{font-size:12.5px;color:var(--muted)}
+  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .toggle button{border:0;background:#fff;color:var(--muted);font:inherit;font-size:12.5px;font-weight:600;
+    padding:6px 13px;cursor:pointer}
+  .toggle button.on{background:var(--accent);color:#fff}
+  svg{display:block;width:100%;height:auto}
+  .axis{fill:var(--muted);font-size:11px}
+  .grid{stroke:var(--line);stroke-width:1}
+  .foot{font-size:12px;color:var(--muted);line-height:1.6;margin-top:18px}
+  .foot b{color:var(--ink)}
+  @media(max-width:620px){.cards{grid-template-columns:1fr}.card .value{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Local Market · Demo</p>
+  <h1>Westchester County Market</h1>
+  <p class="sub">Monthly market statistics for Westchester County, NY. Real data pulled from FRED (series 36119).</p>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2 id="chartTitle">Median Listing Price</h2>
+      <div class="toggle" id="toggle">
+        <button data-k="price" class="on">Price</button>
+        <button data-k="active">Inventory</button>
+        <button data-k="dom">Days on Market</button>
+      </div>
+    </div>
+    <div class="hint" id="chartHint" style="font-size:12.5px;color:var(--muted);margin-bottom:4px"></div>
+    <div id="chart"></div>
+  </div>
+
+  <p class="foot">
+    <b>Source:</b> Realtor.com market data via Federal Reserve (FRED), Westchester County (FIPS 36119).
+    Updated monthly. This is aggregate county-level market data, not individual listings.
+    <br><b>Demo note:</b> data shown is the real latest 25 months, fetched live for this prototype.
+  </p>
+</div>
+
+<script>
+const months = ["2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"];
+const series = {
+  price:  {title:"Median Listing Price", fmt:v=>"$"+(v/1000).toFixed(0)+"k", unit:"", goodDown:true,
+    data:[731508,711000,699000,649450,644000,635750,699000,736200,795000,784450,774725,729999,749350,726250,699000,649950,615000,632500,679750,712500,750000,749700,739000,650000,682000]},
+  active: {title:"Active Listings", fmt:v=>v.toLocaleString(), unit:"homes", goodDown:false,
+    data:[1595,1623,1478,1192,1062,1129,1229,1328,1570,1622,1546,1423,1547,1541,1422,1148,1073,1071,1185,1440,1539,1671,1637,1587,1659]},
+  dom:    {title:"Median Days on Market", fmt:v=>v+" days", unit:"days", goodDown:true,
+    data:[47,46,52,75,76,59,40,35,33,43,52,60,53,51,57,66,71,47,37,31,30,35,43,52,55]},
+};
+
+function pct(cur,prev){return ((cur-prev)/prev*100);}
+function chgHTML(k){
+  const s=series[k], d=s.data, cur=d[d.length-1], yoy=d[d.length-13];
+  const diff=pct(cur,yoy);
+  const isUp=diff>=0;
+  // "good" = green. Price up good, inventory up (buyer-friendly) neutral-ish, DOM up = slower = bad
+  const good = s.goodDown ? diff<0 : diff>0;
+  const arrow=isUp?"▲":"▼";
+  const cls = good ? "up":"down";
+  return `<span class="chg ${cls}">${arrow} ${Math.abs(diff).toFixed(1)}%<span class="yoy">YoY</span></span>`;
+}
+function cardHTML(k){
+  const s=series[k], cur=s.data[s.data.length-1];
+  return `<div class="card"><div class="label">${s.title}</div>
+    <div class="value">${s.fmt(cur)}</div>${chgHTML(k)}</div>`;
+}
+document.getElementById("cards").innerHTML=["price","active","dom"].map(cardHTML).join("");
+
+function drawChart(k){
+  const s=series[k], d=s.data;
+  const W=840,H=280,padL=52,padR=16,padT=16,padB=34;
+  const min=Math.min(...d), max=Math.max(...d);
+  const lo=min-(max-min)*0.12, hi=max+(max-min)*0.12;
+  const x=i=>padL+(W-padL-padR)*(i/(d.length-1));
+  const y=v=>padT+(H-padT-padB)*(1-(v-lo)/(hi-lo));
+  const line=d.map((v,i)=>(i?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1)).join(" ");
+  const area=`M${x(0)},${y(d[0])} `+d.map((v,i)=>"L"+x(i).toFixed(1)+","+y(v).toFixed(1)).join(" ")+` L${x(d.length-1)},${H-padB} L${x(0)},${H-padB} Z`;
+  // y gridlines
+  let grid="";
+  for(let t=0;t<=4;t++){
+    const v=lo+(hi-lo)*t/4, yy=y(v);
+    grid+=`<line class="grid" x1="${padL}" y1="${yy.toFixed(1)}" x2="${W-padR}" y2="${yy.toFixed(1)}"/>`;
+    grid+=`<text class="axis" x="${padL-8}" y="${(yy+4).toFixed(1)}" text-anchor="end">${s.fmt(Math.round(v))}</text>`;
+  }
+  // x labels every 4 months + last
+  let xl="";
+  d.forEach((v,i)=>{
+    if(i%4===0||i===d.length-1){
+      const m=months[i]; const lbl=m.slice(2).replace("-","/");
+      xl+=`<text class="axis" x="${x(i).toFixed(1)}" y="${H-12}" text-anchor="middle">${lbl}</text>`;
+    }
+  });
+  const lastX=x(d.length-1), lastY=y(d[d.length-1]);
+  const svg=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img">
+    <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
+    ${grid}
+    <path d="${area}" fill="url(#g)"/>
+    <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${lastX.toFixed(1)}" cy="${lastY.toFixed(1)}" r="4.5" fill="var(--accent)" stroke="#fff" stroke-width="2"/>
+    ${xl}
+  </svg>`;
+  document.getElementById("chart").innerHTML=svg;
+  document.getElementById("chartTitle").textContent=s.title;
+  document.getElementById("chartHint").textContent="Last 25 months · "+months[0].replace("-","/")+" to "+months[months.length-1].replace("-","/");
+}
+drawChart("price");
+document.getElementById("toggle").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  [...document.querySelectorAll("#toggle button")].forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); drawChart(b.dataset.k);
+});
+</script>
+</body>
+</html>
