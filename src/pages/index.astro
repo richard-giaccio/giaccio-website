@@ -91,6 +91,28 @@ const statuses = ['active', 'for-rent', 'rented', 'sold'].filter((s) => all.some
     </div>
   </section>
 
+  <!-- Our Story -->
+  <section class="section">
+    <div class="wrap">
+      <div class="story">
+        {storyImg && (
+          <div class="story-img" data-reveal>
+            <img src={storyImg.jpg} alt={site.story.image_alt} loading="lazy" decoding="async" />
+          </div>
+        )}
+        <div data-reveal>
+          <p class="founder-line">{site.story.founder_line}</p>
+          <p class="eyebrow">{site.story.eyebrow}</p>
+          <h2>{site.story.title}</h2>
+          <div class="gold-rule"></div>
+          {site.story.body.map((para) => <p>{para}</p>)}
+          {site.story.founder_note && <p class="founder-note">{site.story.founder_note}</p>}
+          <p class="signature">{site.story.signature}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Come Visit -->
   <section class="cta-band">
     {ctaImg && <img class="cta-bg" src={ctaImg.jpg} alt="" />}
