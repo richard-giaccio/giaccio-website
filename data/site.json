@@ -1,15 +1,16 @@
 {
   "_editing_notes": "All the words on the site live here so you can change them without touching code. Anything in [SQUARE BRACKETS] is a placeholder for you (Rich) to fill in, like your father's name, a founding year, or a phone number. Leave a value as an empty string \"\" to hide that piece.",
-
   "brand": "Giaccio Properties",
-
+  "analytics": {
+    "_note": "Paste your Google Analytics 4 Measurement ID below (it looks like G-XXXXXXXXXX, from Analytics > Admin > Data Streams). Leave it as \"\" to turn analytics off. Nothing loads until a real G- id is here.",
+    "ga4Id": "G-35Z211R8MX"
+  },
   "hero": {
     "eyebrow": "A Family of Homes · Westchester County, New York",
     "title": "The homes our family built",
     "subtitle": "Every property here was built by our family, across Westchester County. Some have been sold, some are lovingly rented, and a few are still waiting for the right family. This is their story, and ours.",
     "cta": "Explore the Collection"
   },
-
   "story": {
     "eyebrow": "Our Story",
     "title": "Built by hand, generation to generation",
@@ -24,20 +25,17 @@
     "founder_note": "Giaccio Properties is run by Rich Giaccio, a Westchester entrepreneur and business owner. Every home in this collection was built by hand by our family's licensed builders.",
     "signature": "— The Giaccio Family"
   },
-
   "collection": {
     "eyebrow": "The Collection",
     "title": "A Family of Properties",
     "intro": "Some sold, some rented, some still available. Every one built by our family across Westchester County."
   },
-
   "visit": {
     "eyebrow": "Come Visit",
     "title": "See them for yourself",
     "body": "Want to walk through one of our homes, or learn the story behind it? Reach out any time. We would love to show you around.",
     "cta": "Get in Touch"
   },
-
   "contact": {
     "email": "info@giaccioproperties.com",
     "phone": "[Your phone number]",

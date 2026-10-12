@@ -3,6 +3,8 @@ import '../styles/global.css';
 import site from '../../data/site.json';
 const { title, description, image, type = 'website', noindex = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ga4Id = (site.analytics?.ga4Id || '').trim();
+const gaEnabled = /^G-[A-Z0-9]+$/i.test(ga4Id);
 const SITE = 'https://giaccioproperties.com';
 const canonicalURL = new URL((Astro.url.pathname.replace(/\/$/, '') || '/'), SITE).href;
 const pageTitle = title ? `${title} — Giaccio Properties` : 'Giaccio Properties — Homes Built by Hand in Westchester County, NY';
@@ -36,6 +38,12 @@ const nav = [
     <script is:inline>
       (function () { try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); } catch (e) {} })();
     </script>
+    {gaEnabled && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga4Id}');`}></script>
+      </>
+    )}
     <title>{pageTitle}</title>
     <meta name="description" content={metaDesc} />
     <link rel="canonical" href={canonicalURL} />
