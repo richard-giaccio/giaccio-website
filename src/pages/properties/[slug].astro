@@ -32,7 +32,7 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 const SITE = 'https://giaccioproperties.com';
 const pageUrl = `${SITE}/properties/${p.slug}`;
 const heroAbs = new URL(hero ? hero.jpg : '/assets/properties/ashwood-road-19-south-salem/main.jpg', SITE).href;
-const metaDesc = `${p.displayAddress} in ${p.location}${price ? ` — ${price}` : ''}. A Giaccio Properties home, built by hand in Westchester County, New York. View photos, details, and location.`;
+const metaDesc = `${p.displayAddress} in ${p.location}${price ? ` — ${price}` : ''}. A Giaccio Properties home in Westchester County, New York. View photos, details, and location.`;
 const propertySchema = {
   '@context': 'https://schema.org',
   '@type': 'Residence',

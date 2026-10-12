@@ -7,8 +7,8 @@ const ga4Id = (site.analytics?.ga4Id || '').trim();
 const gaEnabled = /^G-[A-Z0-9]+$/i.test(ga4Id);
 const SITE = 'https://giaccioproperties.com';
 const canonicalURL = new URL((Astro.url.pathname.replace(/\/$/, '') || '/'), SITE).href;
-const pageTitle = title ? `${title} — Giaccio Properties` : 'Giaccio Properties — Homes Built by Hand in Westchester County, NY';
-const metaDesc = description || 'A family portfolio of homes built by hand across Westchester County, New York. Browse houses for sale and rent from Giaccio Properties, a family of licensed builders.';
+const pageTitle = title ? `${title} — Giaccio Properties` : 'Giaccio Properties — Homes Across Westchester County, NY';
+const metaDesc = description || 'A family portfolio of homes across Westchester County, New York — built, sold, and listed by the Giaccio family. Browse houses for sale and rent from Giaccio Properties.';
 const ogImage = new URL(image || '/assets/properties/ashwood-road-19-south-salem/main.jpg', SITE).href;
 const orgSchema = {
   '@context': 'https://schema.org',
@@ -94,7 +94,7 @@ const nav = [
         <div class="cols">
           <div>
             <div class="brand" style="font-family:var(--serif);font-size:1.6rem;letter-spacing:.04em;">Giaccio Properties</div>
-            <p style="max-width:340px;">A family portfolio of homes built across Westchester County, New York. Sold, rented, and available, each one built by our family.</p>
+            <p style="max-width:340px;">A family portfolio of homes across Westchester County, New York. Built, sold, and listed by the Giaccio family — available, sold, and rented.</p>
           </div>
           <div>
             <h2>Explore</h2>
