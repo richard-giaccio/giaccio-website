@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../../data/site.json';
+
+const effectiveDate = 'October 12, 2026';
+const email = site.contact.email;
+---
+<BaseLayout
+  title="Terms of Use"
+  description="The terms that govern your use of the Giaccio Properties website."
+>
+  <section class="section alt">
+    <div class="wrap legal">
+      <div class="section-head">
+        <p class="eyebrow">Legal</p>
+        <h1>Terms of Use</h1>
+        <p>Effective {effectiveDate}</p>
+      </div>
+
+      <p>
+        These Terms of Use govern your access to and use of the Giaccio Properties website. By using this
+        website, you agree to these terms. If you do not agree, please do not use the site.
+      </p>
+
+      <h2>About this website</h2>
+      <p>
+        This website presents a portfolio of homes built by the Giaccio family across {site.contact.area}.
+        Some are available, some have been sold, and some are rented. The site is informational: it lets
+        you browse our homes and get in touch with us. Nothing on this website is an offer, a contract, or
+        a solicitation in any place where that would be unlawful.
+      </p>
+
+      <h2>Property information is not guaranteed</h2>
+      <p>
+        We work to keep listing details accurate, but all property information &mdash; including prices,
+        availability, status, square footage, lot size, features, descriptions, and photographs &mdash; is
+        provided for general information and is subject to change or withdrawal without notice. Information
+        is deemed reliable but is not guaranteed and should be independently verified. Photographs and
+        descriptions may be illustrative and may not reflect the current condition of a property. Nothing
+        on this site constitutes an appraisal or a representation about the value or condition of any
+        property.
+      </p>
+
+      <h2>Not professional advice</h2>
+      <p>
+        Content on this website is not legal, financial, tax, or investment advice. Any decision to buy,
+        sell, or rent a property should be made with the help of your own qualified professionals.
+      </p>
+
+      <h2>Fair Housing</h2>
+      <p>
+        We support the principles of equal housing opportunity. We do not discriminate on the basis of
+        race, color, religion, sex, disability, familial status, national origin, or any other class
+        protected by applicable federal, state, or local law.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        You agree to use this website only for lawful purposes. You may not attempt to disrupt or gain
+        unauthorized access to the site, collect information from it through automated means without our
+        permission, or use it in any way that infringes the rights of others.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        The content on this website, including text, photographs, graphics, and the Giaccio Properties
+        name, is owned by or licensed to us and is protected by applicable law. You may view and share
+        pages for personal, non-commercial use, but you may not copy, reproduce, or use our content for
+        other purposes without our written permission.
+      </p>
+
+      <h2>Links and embedded content</h2>
+      <p>
+        This website may link to or embed content from third parties, such as mapping services. We are not
+        responsible for the content, policies, or practices of those third parties.
+      </p>
+
+      <h2>Disclaimer of warranties</h2>
+      <p>
+        This website is provided &ldquo;as is&rdquo; and &ldquo;as available,&rdquo; without warranties of
+        any kind, whether express or implied, to the fullest extent permitted by law. We do not warrant
+        that the site will be uninterrupted, error-free, or free of harmful components.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, Giaccio Properties will not be liable for any indirect,
+        incidental, or consequential damages arising from your use of, or inability to use, this website or
+        the information on it.
+      </p>
+
+      <h2>Changes to these terms</h2>
+      <p>
+        We may update these terms from time to time. When we do, we will revise the effective date above.
+        Your continued use of the website means you accept the updated terms.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of the State of New York, without regard to its conflict-of-law
+        rules.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions about these terms can be sent to <a href={`mailto:${email}`}>{email}</a>{site.contact.address ? `, or by mail to ${site.contact.address}.` : '.'}
+      </p>
+    </div>
+  </section>
+</BaseLayout>

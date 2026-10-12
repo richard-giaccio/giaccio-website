@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../../data/site.json';
+
+const effectiveDate = 'October 12, 2026';
+const email = site.contact.email;
+const hasGA = !!(site.analytics && site.analytics.ga4Id && site.analytics.ga4Id.startsWith('G-'));
+---
+<BaseLayout
+  title="Privacy Policy"
+  description="How Giaccio Properties collects, uses, and protects the information you share with us."
+>
+  <section class="section alt">
+    <div class="wrap legal">
+      <div class="section-head">
+        <p class="eyebrow">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p>Effective {effectiveDate}</p>
+      </div>
+
+      <p>
+        Giaccio Properties (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates this website
+        for homes we have built across {site.contact.area}. This policy explains what information
+        we collect when you visit the site or contact us, how we use it, and the choices you have. By
+        using this website, you agree to the practices described here.
+      </p>
+
+      <h2>Information you give us</h2>
+      <p>
+        When you use our contact form, you choose to provide your name, email address, an optional phone
+        number, an optional property you are interested in, and the message you write. We use this
+        information only to respond to your inquiry and to discuss our homes with you. We do not require
+        you to create an account, and we do not ask for financial, payment, or government-identification
+        details through this website.
+      </p>
+
+      <h2>Information collected automatically</h2>
+      <p>
+        Like most websites, our host may record standard technical details when you visit, such as your
+        browser type, device, approximate region, and the pages you view. This information helps keep the
+        site secure and running properly.
+      </p>
+
+      {hasGA && (
+        <>
+          <h2>Analytics and cookies</h2>
+          <p>
+            We use Google Analytics to understand how visitors use the site so we can improve it. Google
+            Analytics sets cookies and may collect information such as your IP address (often truncated),
+            device and browser details, and the pages you view. This data is aggregated and is not used by
+            us to identify you personally. Google processes this information under its own terms; you can
+            learn more at
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+          </p>
+          <p>
+            You can opt out of Google Analytics across websites by installing the
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>,
+            or by blocking cookies in your browser settings. We also honor the theme preference stored in
+            your browser, which is used only to remember light or dark mode on your device.
+          </p>
+        </>
+      )}
+
+      <h2>How we use your information</h2>
+      <p>
+        We use the information above to respond to your inquiries, to communicate with you about our
+        homes, to operate and secure the website, and to understand general site usage. We do not use it
+        for automated decision-making.
+      </p>
+
+      <h2>Map and embedded content</h2>
+      <p>
+        Our contact page displays a map embedded from Google Maps. When that map loads, Google may receive
+        information about your visit in accordance with its own privacy policy.
+      </p>
+
+      <h2>Sharing your information</h2>
+      <p>
+        We do not sell, rent, or trade your personal information. We share it only with service providers
+        that help us operate the website (such as our hosting and analytics providers), and only as needed
+        for them to perform those services, or where required by law.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We keep inquiry messages for as long as needed to respond to you and to maintain a record of our
+        correspondence, after which we delete or archive them. Analytics data is retained according to our
+        analytics provider&rsquo;s settings.
+      </p>
+
+      <h2>Your choices and rights</h2>
+      <p>
+        You may ask us what information we hold about you, request that we correct or delete it, or ask us
+        to stop contacting you, by emailing <a href={`mailto:${email}`}>{email}</a>. Depending on where you
+        live, you may have additional rights under laws such as the California Consumer Privacy Act or the
+        EU/UK General Data Protection Regulation; we will honor applicable requests.
+      </p>
+
+      <h2>Children&rsquo;s privacy</h2>
+      <p>
+        This website is intended for adults interested in our homes. We do not knowingly collect personal
+        information from children under 13.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this policy from time to time. When we do, we will revise the effective date above.
+        Significant changes will be reflected on this page.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions about this policy or your information can be sent to
+        <a href={`mailto:${email}`}>{email}</a>{site.contact.address ? `, or by mail to ${site.contact.address}.` : '.'}
+      </p>
+    </div>
+  </section>
+</BaseLayout>
