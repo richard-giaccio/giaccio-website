@@ -30,11 +30,56 @@
     "title": "A Family of Properties",
     "intro": "Some sold, some rented, some still available. Every one built by our family across Westchester County."
   },
+  "portfolio": {
+    "_note": "The home page is Richard's portfolio: who he is and the work, not a listings page. The full grid of homes lives at /collection.",
+    "eyebrow": "Builder · Westchester County, New York",
+    "title": "Richard Giaccio",
+    "role": "Founder, Giaccio Properties",
+    "intro": "Two generations of building, selling, and renting homes across Westchester County, New York. The houses below are the work: some sold, some rented, a few still waiting.",
+    "cta": "See the work",
+    "work": {
+      "eyebrow": "Selected Work",
+      "title": "A few of the houses",
+      "intro": "Eight addresses from the collection, picked across the towns we have built in.",
+      "cta": "See the full collection"
+    },
+    "craft": {
+      "eyebrow": "The Work",
+      "title": "Built, kept, lived in",
+      "intro": "The family builds its own homes and stays with them — selling some, renting others, holding on to the rest.",
+      "items": [
+        { "title": "Building", "body": "Custom homes raised by the family's own builders, in the towns we know best." },
+        { "title": "Selling", "body": "Homes kept and sold by the family that built them, two generations in." },
+        { "title": "Renting", "body": "Others are rented and lived in today, on the same streets they were built on." }
+      ]
+    }
+  },
   "visit": {
     "eyebrow": "Come Visit",
     "title": "See them for yourself",
     "body": "Want to walk through one of our homes, or learn the story behind it? Reach out any time. We would love to show you around.",
     "cta": "Get in Touch"
+  },
+  "person": {
+    "_note": "Feeds the Person structured data that runs on every page. name should match how he is named everywhere else online. Paste every profile URL that is really his into sameAs (LinkedIn, Facebook, Google Business Profile, MLS agent page, newspaper mentions) — that list is what tells Google these are all the same person. Leave sameAs empty and nothing extra is claimed.",
+    "name": "Richard Giaccio",
+    "alternateName": "Rich Giaccio",
+    "jobTitle": "Founder",
+    "sameAs": []
+  },
+  "organizationSameAs": [],
+  "about": {
+    "_note": "The /about/ page. It is the canonical bio other profiles should link to, so keep it about the person and the family, not about the listings.",
+    "title": "Richard Giaccio",
+    "role": "Founder, Giaccio Properties",
+    "eyebrow": "About",
+    "body": [
+      "Giaccio Properties is the family building company behind the homes on this site. Richard Giaccio founded it, and it has stayed deliberately small: one family, building, selling, and renting its own homes across Westchester County, New York.",
+      "The collection here runs from Pound Ridge and Bedford to Briarcliff Manor and Katonah. Some of these houses were built and sold years ago. Some are rented and full of life today. A few are still waiting for the right family to walk through the door.",
+      "Every home in the collection was raised by the family's own builders, with the same care we would give our own. That standard is the whole business, and it has not changed in two generations.",
+      "If you are looking at a particular address, or want to ask about one that is not listed here, write to us. We read every message personally."
+    ],
+    "signature": "— Richard Giaccio"
   },
   "contact": {
     "email": "info@giaccioproperties.com",

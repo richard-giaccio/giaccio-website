@@ -1,0 +1,24 @@
+---
+import { statusLabel } from '../lib/properties.js';
+const { p, label = 'View home' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const href = `${base}/properties/${p.slug}`;
+---
+<a class="work" href={href}>
+  <div class="work-media">
+    {p.status && <span class={`badge ${p.status}`}>{statusLabel(p.status)}</span>}
+    {p.featured ? (
+      <picture>
+        <source srcset={p.featured.webp} type="image/webp" />
+        <img src={p.featured.jpg} alt={p.displayAddress} loading="lazy" decoding="async" />
+      </picture>
+    ) : (
+      <div class="noimg">Photos coming soon</div>
+    )}
+  </div>
+  <div class="work-body">
+    <h3>{p.displayAddress}</h3>
+    <div class="work-loc">{p.location}</div>
+    <div class="work-arrow">{label} &rarr;</div>
+  </div>
+</a>

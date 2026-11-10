@@ -83,12 +83,14 @@ giaccio-website/
 │   └── form-email-notify.gs# Google Apps Script for detailed contact-form emails
 ├── src/
 │   ├── pages/
-│   │   ├── index.astro             # home page
-│   │   ├── about.astro             # Our Story page
+│   │   ├── index.astro             # Richard's portfolio (the home page)
+│   │   ├── about.astro             # bio page
+│   │   ├── collection.astro        # the full grid of homes, with filters
 │   │   ├── contact.astro           # contact form page
+│   │   ├── 404.astro               # branded not-found page
 │   │   └── properties/[slug].astro # one page per listing (generated from data)
 │   ├── components/PropertyCard.astro
-│   ├── layouts/BaseLayout.astro    # <head>, SEO meta, structured data, header/footer
+│   ├── layouts/BaseLayout.astro    # <head>, SEO meta, entity graph, header/footer
 │   ├── lib/properties.js           # loads + enriches listing data for the templates
 │   └── styles/global.css           # all styling
 ├── astro.config.mjs        # site URL, base path, sitemap integration
@@ -104,10 +106,17 @@ touch `.astro` files to change copy. Edit the JSON, save, commit, push.
 
 Key sections in `site.json`:
 
-- `brand`, `tagline` — site name and tagline
-- `story` — the home-page "Our Story" block: `eyebrow`, `title`, `founder_line`, `body` (array of
-  paragraphs), `signature`
-- `about` — the About page content, including `founder_note`
+- `brand` — site name
+- `hero`, `collection`, `visit` — the home-page blocks
+- `portfolio` — the home page: `eyebrow`, `title`, `role`, `intro`, the `work` block, and the
+  three `craft` items
+- `story` — the longer family story in `data/site.json` (`eyebrow`, `title`, `founder_line`,
+  `body`, `signature`), used by the about page's neighbouring copy
+- `about` — the `/about/` page: `title`, `role`, `eyebrow`, `body` (array of paragraphs),
+  `signature`
+- `person` — feeds the `Person` structured data, and holds the `sameAs` list of his profiles
+  (see [Entity and structured data](#entity-and-structured-data))
+- `organizationSameAs` — links to the business's other profiles
 - `contact` — `email`, `phone`, `area`, `address` (these also feed the structured data)
 
 Anything wrapped in `[SQUARE BRACKETS]` is a placeholder meant to be filled in.
@@ -238,13 +247,44 @@ It must be set up by the Google account that owns the form.
 
 Configured and shipping on every build:
 
-- **Structured data (JSON-LD):** `RealEstateAgent` schema site-wide (business name, address,
-  founder, area served) plus `Residence` + `BreadcrumbList` per listing. Built in `BaseLayout.astro`
-  and `[slug].astro`.
-- **Meta:** unique, location-rich `<title>` and description per page; canonical URL; Open Graph and
-  Twitter cards with per-listing images.
+- **Entity graph (JSON-LD):** every page carries one `@graph` with three linked nodes —
+  `RealEstateAgent` (the business), `Person` (Richard Giaccio), and `WebSite` — joined by stable
+  `@id`s so Google resolves them as one entity rather than three unrelated ones. Per listing:
+  `Residence` + `BreadcrumbList`. Built in `BaseLayout.astro` and `[slug].astro`.
+- **Meta:** unique title and description on every page (all 96 differ); canonical URL; Open Graph
+  and Twitter cards with per-listing images.
+- **Internal linking:** the home page links eight selected houses and the full collection; the
+  collection links all 73; every listing links back to `/collection`.
 - **Sitemap:** `@astrojs/sitemap` generates `sitemap-index.xml` on every build.
 - **robots.txt:** `public/robots.txt` allows all and points to the sitemap.
+
+### Entity and structured data
+
+The `Person` node is only as strong as its `sameAs` list. It ships empty on purpose — nothing is
+claimed that isn't verified. Fill it in with the URLs that are really his:
+
+```json
+"person": {
+  "name": "Richard Giaccio",
+  "alternateName": "Rich Giaccio",
+  "jobTitle": "Founder",
+  "sameAs": [
+    "https://www.linkedin.com/in/...",
+    "https://www.google.com/maps/place/...",
+    "https://www.onekeymls.com/realtor/agents/...",
+    "https://www.facebook.com/..."
+  ]
+}
+```
+
+Put the business's profiles (Google Business Profile, Facebook page, Yelp, Houzz, anything with the
+same address) in `organizationSameAs`. Keep the name, address, and email identical to the ones on
+those profiles — mismatched NAP is what splits an entity in two.
+
+`contact.phone` is still a placeholder, and the site hides it while it starts with `[`. That means
+there is **no phone number anywhere on the site and none in the structured data** — name, address,
+and phone are the three fields Google matches entities on, so filling this in is a bigger win than
+any other single line in the repo.
 
 **One-time external step:** submit `https://giaccioproperties.com/sitemap-index.xml` in
 [Google Search Console](https://search.google.com/search-console).

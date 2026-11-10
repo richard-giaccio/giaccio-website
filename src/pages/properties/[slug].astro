@@ -32,7 +32,12 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 const SITE = 'https://giaccioproperties.com';
 const pageUrl = `${SITE}/properties/${p.slug}`;
 const heroAbs = new URL(hero ? hero.jpg : '/assets/properties/ashwood-road-19-south-salem/main.jpg', SITE).href;
-const metaDesc = `${p.displayAddress} in ${p.location}${price ? ` — ${price}` : ''}. A Giaccio Properties home in Westchester County, New York. View photos, details, and location.`;
+
+
+const metaDesc = `${mapQuery}${p.zip ? ` ${p.zip}` : ''}${
+  price ? ` — ${price}` : ''
+} — a home in the Giaccio Properties collection, Westchester County, NY. Photos, location, and contact details.`;
+
 const propertySchema = {
   '@context': 'https://schema.org',
   '@type': 'Residence',
@@ -40,13 +45,14 @@ const propertySchema = {
   url: pageUrl,
   image: heroAbs,
   address: { '@type': 'PostalAddress', streetAddress: p.displayAddress, addressLocality: p.town, addressRegion: p.state, postalCode: p.zip || undefined, addressCountry: 'US' },
+  ...(p.description ? { description: p.description } : {}),
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'The Collection', item: `${SITE}/#listings` },
+    { '@type': 'ListItem', position: 2, name: 'The Collection', item: `${SITE}/collection` },
     { '@type': 'ListItem', position: 3, name: mapQuery, item: pageUrl },
   ],
 };
@@ -113,7 +119,7 @@ const breadcrumbSchema = {
         </div>
       </aside>
     </div>
-    <p style="padding-bottom:60px;"><a href={`${base}/#listings`} style="color:var(--gold-soft);font-weight:600;">&larr; Back to all listings</a></p>
+    <p style="padding:60px 0;"><a href={`${base}/collection`} style="color:var(--gold-soft);font-weight:600;">&larr; Back to the collection</a></p>
   </div>
 
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged property photo" aria-hidden="true" tabindex="-1">
@@ -157,4 +163,5 @@ const breadcrumbSchema = {
       if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
     });
   </script>
+
 </BaseLayout>

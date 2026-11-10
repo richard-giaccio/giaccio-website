@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Page Not Found" description="That page is not here. Browse the Giaccio Properties collection by town, or get in touch." noindex={true}>
+  <section class="section">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <p class="eyebrow">404</p>
+      <h1>That page isn't here</h1>
+      <div class="gold-rule center"></div>
+      <p>The address may have changed, or the link that brought you here was old. The homes are all still where they were.</p>
+
+      <p style="margin-top:36px;">
+        <a href={`${base}/collection`} class="btn solid">See the Collection</a>
+      </p>
+
+      <p style="margin-top:10px;">
+        <a href={`${base}/`} style="color:var(--gold-soft);font-weight:600;">Home</a> &middot;
+        <a href={`${base}/about`} style="color:var(--gold-soft);font-weight:600;">About</a> &middot;
+        <a href={`${base}/contact`} style="color:var(--gold-soft);font-weight:600;">Contact</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

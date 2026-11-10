@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getProperties, getTownGroups } from '../lib/properties.js';
+import site from '../../data/site.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const about = site.about || {};
+const person = site.person || {};
+const all = getProperties();
+const towns = getTownGroups();
+
+const description = `${person.name} is the founder of Giaccio Properties, a family building company in Westchester County, New York. The story behind the collection of homes on this site.`;
+---
+<BaseLayout title={about.title || 'About'} description={description}>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">{about.eyebrow}</p>
+      <h1>{about.title}</h1>
+      <p class="founder-line">{about.role}</p>
+      <div class="gold-rule"></div>
+
+      {about.body.map((para, i) => (
+        <p style={i === 0 ? 'font-size:1.15rem;' : ''}>{para}</p>
+      ))}
+
+      {about.signature && <p class="signature" style="margin-top:30px;">{about.signature}</p>}
+
+      <h2 style="margin-top:56px;">The collection</h2>
+      <p>
+        The homes on this site are the family's own: {all.length} addresses in {site.contact.area}.
+        See <a href={`${base}/collection`} style="color:var(--gold-soft);font-weight:600;">the full collection</a>
+        for all of them.
+      </p>
+
+      <div class="stats" style="margin-top:60px;">
+        <div class="stat"><div class="num">{all.length}</div><div class="lbl">Homes in the Collection</div></div>
+        <div class="stat"><div class="num">{towns.length}</div><div class="lbl">Towns</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Generations</div></div>
+      </div>
+
+      <div style="margin-top:60px;"><a href={`${base}/contact`} class="btn">Get in Touch</a></div>
+    </div>
+  </section>
+</BaseLayout>

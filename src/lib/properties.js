@@ -71,3 +71,33 @@ export function getTowns() {
   const set = new Set(properties.map((p) => p.town).filter(Boolean));
   return [...set].sort();
 }
+
+export function slugify(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/['\u2019.]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+// one hub page per town, keyed by town + state so "Bedford, NY" and a
+// hypothetical "Bedford, CT" never collapse into the same URL
+export function townSlug(town, state) {
+  return `${slugify(town)}-${slugify(state || 'ny')}`;
+}
+
+export function getTownGroups() {
+  const groups = new Map();
+  for (const p of getProperties()) {
+    if (!p.town) continue;
+    const slug = townSlug(p.town, p.state);
+    if (!groups.has(slug)) {
+      groups.set(slug, { slug, town: p.town, state: p.state || 'NY', county: p.county || '', properties: [] });
+    }
+    groups.get(slug).properties.push(p);
+  }
+  return [...groups.values()]
+    .map((g) => ({ ...g, count: g.properties.length }))
+    .sort((a, b) => b.count - a.count || a.town.localeCompare(b.town));
+}
+

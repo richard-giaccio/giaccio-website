@@ -1,13 +1,12 @@
 # Giaccio Properties
 
-> Giaccio Properties is a family-run home builder and real estate portfolio in Westchester County, New York. The company was founded by Richard Giaccio, a licensed builder (License #40GI1153960). Every home in the collection was built by hand by John Giaccio and Richard Giaccio. The website at https://giaccioproperties.com showcases these homes, which are offered for sale and for rent across Westchester County and nearby towns.
+> The personal site of Richard Giaccio, a builder in Westchester County, New York and the founder of Giaccio Properties, a family-run home builder and real estate portfolio. Every home in the collection was raised by the Giaccio family's own builders. The site shows his work: houses built, sold, and rented across Westchester County and nearby towns.
 
 Giaccio Properties is not a brokerage listing third-party inventory. It is the builder's own collection of homes: houses the Giaccio family designed and constructed themselves, two generations of building. Some homes are for sale, some are rented and occupied, and some are available now. The site exists so prospective buyers and renters can browse the homes, see photos and locations, and contact the family directly.
 
 ## About
 
-- Founder: Richard Giaccio, Licensed Builder (License #40GI1153960)
-- Homes built by: John Giaccio and Richard Giaccio
+- Founder: Richard Giaccio, licensed builder
 - Business type: family-owned home builder and residential real estate
 - Service area: Westchester County, New York, and adjacent towns
 - Office: 143 Bedford Rd, Katonah, NY 10536
@@ -15,9 +14,10 @@ Giaccio Properties is not a brokerage listing third-party inventory. It is the b
 
 ## Key pages
 
-- [Home](https://giaccioproperties.com/): the full collection of homes with photos and locations
-- [Our Story](https://giaccioproperties.com/about/): the Giaccio family history and building philosophy
-- [Contact](https://giaccioproperties.com/contact/): reach the Giaccio family directly about any home
+- [Richard Giaccio](https://giaccioproperties.com/): the portfolio — who he is and selected work
+- [About](https://giaccioproperties.com/about): the family, the towns, and how the collection came together
+- [The Collection](https://giaccioproperties.com/collection): every home in one list, with filters
+- [Contact](https://giaccioproperties.com/contact): reach the Giaccio family directly about any home
 
 ## The collection
 
